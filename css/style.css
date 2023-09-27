@@ -16,63 +16,9 @@ body {
   background: #333333;
 }
 
-.form {
+form {
   width: 400px;
   height: 450px;
-  border: 1px solid black;
+  border: 2px solid rgb(7, 190, 240);
   border-radius: 8px;
-  background-color: #fff;
-  font-size: 16px;
-}
-.form__title {
-  padding: 5% 0;
-  text-transform: uppercase;
-  text-align: center;
-  color: #0f0f0f;
-  font-size: 16px;
-}
-.form__abc, .form__abc1, .form__abc2 {
-  position: relative;
-}
-.form__box {
-  padding: 10%;
-  height: 10%;
-}
-.form__box--input {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  height: 35%;
-  border-radius: 8px;
-  background-color: none;
-}
-.form__box--label {
-  position: absolute;
-  top: 3%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-bottom: 2%;
-  color: black;
-}
-.form__abc1, .form__abc2 {
-  margin-top: 5%;
-}
-.form__btnbox {
-  margin-top: 5%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 10%;
-}
-.form__btn {
-  border-radius: 10px;
-  width: 100px;
-  height: 40px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.form__btn--highlight {
-  background-color: rgb(0, 195, 255);
 }/*# sourceMappingURL=style.css.map */
