@@ -20,4 +20,9 @@ form {
 	height: 450px;
 	border: 2px solid rgb(7, 190, 240);
 	border-radius: 8px;
+	
+	&__title {
+		text-transform: uppercase;
+	}
 }
+
