@@ -15,14 +15,71 @@ body {
 	color: #fff;
 	background: #333333;
 }
-form {
+.form {
 	width: 400px;
 	height: 450px;
+	background-image: url('../img/dog-2700888_1280.jpg');
 	border: 2px solid rgb(7, 190, 240);
 	border-radius: 8px;
-	
 	&__title {
+		margin-top: 3%;
 		text-transform: uppercase;
+		text-align: center;
+		font-weight: bold;
+	}
+
+	&__box {
+		position: relative;
+		width: 100%;
+		height: 15%;
+		margin-top: 10%;
+		background-color: cadetblue;
+
+		&--label,
+		&--password {
+			position: absolute;
+		}
+		&--label {
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-transform: uppercase;
+		}
+		&--password {
+			bottom: 20%;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 30%;
+			width: 50%;
+			border-radius: 5px;
+		}
+	}
+	&__box1 {
+		position: relative;
+		margin-top: 5%;
+		width: 100%;
+		height: 10%;
+		background-color: rgba(34, 130, 226, 0.474);
+		&--submit {
+			position: absolute;
+			top: 20%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 50%;
+			height: 30px;
+			cursor: pointer;
+		}
+	}
+	&__box2 {
+		display: flex;
+		justify-content: space-around;
+		margin-top: 20%;
+		background-color: #fff;
+		&--btn,
+		&--reset {
+			width: 30%;
+			height: 40px;
+			background-color: rgba(116, 218, 240, 0.262);
+		}
 	}
 }
-
