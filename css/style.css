@@ -19,7 +19,7 @@ body {
 .form {
   width: 400px;
   height: 450px;
-  background-image: url("../img/dog-2700888_1280.jpg");
+  background-image: url("../img/universe.jpg");
   border: 2px solid rgb(7, 190, 240);
   border-radius: 8px;
 }
@@ -28,6 +28,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
+  color: #e0d3d3;
 }
 .form__box {
   position: relative;
@@ -44,6 +45,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
+  color: #251212;
 }
 .form__box--password {
   bottom: 20%;
@@ -73,10 +75,10 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 20%;
-  background-color: #fff;
+  background-color: #1e73e1;
 }
 .form__box2--btn, .form__box2--reset {
   width: 30%;
   height: 40px;
-  background-color: rgba(116, 218, 240, 0.262);
+  background-color: #e3841c;
 }/*# sourceMappingURL=style.css.map */
