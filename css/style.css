@@ -12,16 +12,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   overflow: hidden;
   color: #fff;
-  background: #333333;
-  font-size: 30px;
-}
-
-:root {
-  font-size: 62.5%;
-}
-
-button {
-  padding: 0.5em 1em;
-  width: 20rem;
-  font-size: 2rem;
+  background: #494949;
+  font-size: 17px;
 }/*# sourceMappingURL=style.css.map */
