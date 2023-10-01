@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 62, 5%;
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
@@ -20,6 +20,22 @@ body {
   font-family: "Open Sans", sans-serif;
   overflow: hidden;
   color: #fff;
-  background: #b81f1f;
-  font-size: 17px;
+  background: #4c4949;
+  font-size: 1.6rem;
+}
+
+.burger-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1em;
+  background: greenyellow;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 190;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
 }/*# sourceMappingURL=main.css.map */
