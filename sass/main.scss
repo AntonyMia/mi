@@ -1,5 +1,5 @@
 @use './colors' as c;
-@use './components' as co;
+@use './components' as b;
 @use './mixins' as m;
 *,
 *::after,
@@ -14,15 +14,12 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 	min-height: 100vh;
 	font-family: 'Dancing Script', cursive;
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
 	color: #fff;
-	background: #4c4949;
+	background: c.$dark;
 	font-size: 1.6rem;
 }
 // navigation
@@ -40,6 +37,32 @@ body {
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		border-radius: 8px;
 	}
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
 	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+	&__bars,
+	&__bars::before,
+	&__bars::after {
+		@include m.burgerBtn;
+	}
+	&__bars {
+		width: 100%;
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+		&::before {
+			top: 27px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
 	}
 }
