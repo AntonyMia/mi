@@ -6,3 +6,15 @@
 	content: '';
 	transition: width 0.3s;
 }
+@mixin heroImages($bgImg) {
+	background-image: $blue-gradient, url($bgImg); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+@mixin abc($bgAbc) {
+	background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f459 74%),url($bgAbc);/*po url nie może być spacji*/
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}

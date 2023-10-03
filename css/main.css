@@ -9,7 +9,7 @@ wrapper {
   position: absolute;
   height: 40px;
   width: 60%;
-  background-color: pure-white;
+  background-color: rgb(0, 255, 47);
 }
 .white-block-left {
   /*bo & =".white-block*/
@@ -113,4 +113,30 @@ body {
   top: 27px;
   width: 30%;
   transition-delay: 0.1s;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  height: 75vh;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/small_palms.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  /*pokazujemy co to za zmienna, używamy cudzysłowia*/
+}
+
+.abc {
+  width: 150px;
+  height: 160px;
+  background-image: linear-gradient(147deg, #c3cbdc 0%, rgba(237, 241, 244, 0.3490196078) 74%), url("../img/paradise_island.jpg"); /*po url nie może być spacji*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }/*# sourceMappingURL=main.css.map */

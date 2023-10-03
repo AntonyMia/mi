@@ -1,6 +1,6 @@
-@use './colors' as c;
-@use './components' as b;
-@use './mixins' as m;
+@import './mixins';
+@import './colors';
+@import './components';
 *,
 *::after,
 *::before {
@@ -19,7 +19,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	overflow: hidden;
 	color: #fff;
-	background: c.$dark;
+	background: $dark;
 	font-size: 1.6rem;
 }
 // navigation
@@ -51,7 +51,7 @@ body {
 	&__bars,
 	&__bars::before,
 	&__bars::after {
-		@include m.burgerBtn;
+		@include burgerBtn;
 	}
 	&__bars {
 		width: 100%;
@@ -65,4 +65,24 @@ body {
 			transition-delay: 0.1s;
 		}
 	}
+}
+// header
+.header {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2em;
+	height: 75vh;
+	text-align: center;
+	color: $pure-white;
+	@include heroImages(
+		'../img/small_palms.jpg'
+	); /*pokazujemy co to za zmienna, używamy cudzysłowia*/
+}
+.abc {
+	width: 150px;
+	height: 160px;
+	@include abc('../img/paradise_island.jpg');
 }
