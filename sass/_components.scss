@@ -1,4 +1,4 @@
-wrapper {
+.wrapper {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
@@ -7,7 +7,8 @@ wrapper {
 	position: absolute;
 	height: 40px;
 	width: 60%;
-	background-color: rgb(0, 255, 47);
+	background-color: $pure-white;
+
 	&-left {
 		/*bo & =".white-block*/
 		bottom: 0;
@@ -27,19 +28,20 @@ wrapper {
 	z-index: 0;
 	&::before {
 		display: block; /*z natury to element liniowy*/
-		content: '';
+		content: ''; /*nie zapominaj o tym*/
 		position: absolute; /*dla tej pseudoklasy rodzicem jest .btn-special-animation*/
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		transform: scaleX(0); /*czyli element nie będzie widoczny*/
-		transform-origin: right;
+		transform: scaleY(0); /*czyli element nie będzie widoczny*/
+		transform-origin: top;
 		transition: transform 0.3s;
-		z-index: -1;
+		z-index: -1;/*żeby nie przesłaniał napisu*/
 	}
-	&::before:hover {
-		transform: scaleX(1); /*czyli elment się pojawi*/
-		transform-origin: left;
+	&:hover::before {
+		/* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
+		transform: scaleY(1); /*czyli elment się pojawi*/
+		transform-origin: bottom;
 	}
 }

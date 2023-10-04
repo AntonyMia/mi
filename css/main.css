@@ -1,5 +1,5 @@
 @charset "UTF-8";
-wrapper {
+.wrapper {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
@@ -9,7 +9,7 @@ wrapper {
   position: absolute;
   height: 40px;
   width: 60%;
-  background-color: rgb(0, 255, 47);
+  background-color: #fff;
 }
 .white-block-left {
   /*bo & =".white-block*/
@@ -31,20 +31,21 @@ wrapper {
 }
 .btn-special-animation::before {
   display: block; /*z natury to element liniowy*/
-  content: "";
+  content: ""; /*nie zapominaj o tym*/
   position: absolute; /*dla tej pseudoklasy rodzicem jest .btn-special-animation*/
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  transform: scaleX(0); /*czyli element nie będzie widoczny*/
-  transform-origin: right;
+  transform: scaleY(0); /*czyli element nie będzie widoczny*/
+  transform-origin: top;
   transition: transform 0.3s;
-  z-index: -1;
+  z-index: -1; /*żeby nie przesłaniał napisu*/
 }
-.btn-special-animation::before:hover {
-  transform: scaleX(1); /*czyli elment się pojawi*/
-  transform-origin: left;
+.btn-special-animation:hover::before {
+  /* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
+  transform: scaleY(1); /*czyli elment się pojawi*/
+  transform-origin: bottom;
 }
 
 *,
@@ -73,7 +74,7 @@ body {
 .burger-btn {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 10%;
   padding: 1em;
   background: greenyellow;
   border: 1px solid transparent;
@@ -125,18 +126,76 @@ body {
   height: 75vh;
   text-align: center;
   color: #fff;
-  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/small_palms.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/small_palms.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   /*pokazujemy co to za zmienna, używamy cudzysłowia*/
+  background-attachment: scroll;
+}
+.header__heading {
+  font-family: "Dancing Script", cursive;
+  font-size: 4.8rem;
+  font-weight: 300;
+}
+.header__text {
+  font-size: 1.4rem;
+}
+.header__btn {
+  margin-top: 2em;
+  padding: 0.8em 1.6em;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
+  color: #2e2e2e;
+  text-decoration: none; /*znika podkreślenie*/
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #eee;
 }
 
-.abc {
-  width: 150px;
-  height: 160px;
-  background-image: linear-gradient(147deg, #c3cbdc 0%, rgba(237, 241, 244, 0.3490196078) 74%), url("../img/paradise_island.jpg"); /*po url nie może być spacji*/
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.btn-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 2rem;
+  padding: 1em 2em;
+  width: 200px;
+  height: 100px;
+  background-color: #eee;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn-center::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  transform: scaleX(0);
+  background-color: #00ffaa;
+  transition: transform 0.3s;
+  transform-origin: right;
+  z-index: -1;
+}
+.btn-center:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (min-width: 768px) {
+  .white-block {
+    height: 50px;
+    width: 45%;
+  }
+  .header__heading {
+    font-size: 6.6rem;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -26,7 +26,7 @@ body {
 .burger-btn {
 	position: fixed;
 	top: 20px;
-	right: 20px;
+	right: 10%;
 	padding: 1em;
 	background: greenyellow;
 	border: 1px solid transparent;
@@ -80,9 +80,73 @@ body {
 	@include heroImages(
 		'../img/small_palms.jpg'
 	); /*pokazujemy co to za zmienna, używamy cudzysłowia*/
+	background-attachment: scroll;
+	&__heading {
+		font-family: 'Dancing Script', cursive;
+		font-size: 4.8rem;
+		font-weight: 300;
+	}
+	&__text {
+		font-size: 1.4rem;
+	}
+	&__btn {
+		margin-top: 2em;
+		padding: 0.8em 1.6em;
+		background-color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none; /*znika podkreślenie*/
+		text-transform: uppercase;
+		cursor: pointer;
+		&::before {
+			background-color: $light-white;
+		}
+	}
 }
-.abc {
-	width: 150px;
-	height: 160px;
-	@include abc('../img/paradise_island.jpg');
+.btn-center {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 2rem;
+	padding: 1em 2em;
+	width: 200px;
+	height: 100px;
+	background-color: $light-white;
+	border: none;
+	border-radius: 8px;
+	font-size: 2rem;
+	text-transform: uppercase;
+	overflow: hidden;
+	cursor: pointer;
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		transform: scaleX(0);
+		background-color: $green-color;
+		transition: transform 0.3s;
+		transform-origin: right;
+		z-index: -1;
+	}
+	&:hover::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
+
+// media
+@media (min-width: 768px) {
+	.white-block {
+		height: 50px;
+		width: 45%;
+	}
+.header{
+	&__heading{
+		font-size: 6.6rem;
+	}
+}
 }
