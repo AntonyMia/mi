@@ -198,4 +198,10 @@ body {
   .header__heading {
     font-size: 6.6rem;
   }
+  .header__text {
+    font-size: 2.2rem;
+  }
+  .header__btn {
+    font-size: 1.6rem;
+  }
 }/*# sourceMappingURL=main.css.map */
