@@ -26,9 +26,9 @@ body {
 .burger-btn {
 	position: fixed;
 	top: 20px;
-	right: 10%;
+	right: 7%;
 	padding: 1em;
-	background: greenyellow;
+	background: none;
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 190;
@@ -66,6 +66,45 @@ body {
 		}
 	}
 }
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	background-color: red;
+	z-index: 22;
+	&__item {
+		position: relative;
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: $pure-white;
+		text-decoration: none;
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			transform: scale(0);
+			width: 3px;
+			height: 100%;
+			background-color: $pure-white;
+			transition: transform 0.3s;
+			transform-origin: top;
+		}
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+	&--active {
+		transform: translateX(0%);
+}
+}
 // header
 .header {
 	position: relative;
@@ -98,43 +137,12 @@ body {
 		color: $dark;
 		text-decoration: none; /*znika podkreślenie*/
 		text-transform: uppercase;
+		font-size: 2rem;
+		font-weight: bold;
 		cursor: pointer;
 		&::before {
 			background-color: $light-white;
 		}
-	}
-}
-.btn-center {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	margin-top: 2rem;
-	padding: 1em 2em;
-	width: 200px;
-	height: 100px;
-	background-color: $light-white;
-	border: none;
-	border-radius: 8px;
-	font-size: 2rem;
-	text-transform: uppercase;
-	overflow: hidden;
-	cursor: pointer;
-	&::before {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		content: '';
-		transform: scaleX(0);
-		background-color: $green-color;
-		transition: transform 0.3s;
-		transform-origin: right;
-		z-index: -1;
-	}
-	&:hover::before {
-		transform: scaleX(1);
-		transform-origin: left;
 	}
 }
 
@@ -153,10 +161,18 @@ body {
 		}
 		&__btn {
 			font-size: 1.6rem;
-
 		}
 	}
 }
-@media (min-width: 992px){
-	
+@media (min-width: 992px) {
+	.burger-btn {
+		right: 9%;
+		top: 5%;
+	}
+	.header {
+		background-image: $blue-gradient, url('../img/big_palms.jpg');
+		&__heading {
+			font-size: 10rem;
+		}
+	}
 }
