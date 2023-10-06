@@ -77,6 +77,9 @@ body {
 	transform: translateX(100%);
 	background-color: red;
 	z-index: 22;
+	&--active {
+		transform: translateX(0);
+	}
 	&__item {
 		position: relative;
 		display: block;
@@ -101,9 +104,17 @@ body {
 			transform: scaleY(1);
 		}
 	}
-	&--active {
-		transform: translateX(0%);
 }
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+.nav-items-animation {
+	animation: navItemsAnimation 1s;
 }
 // header
 .header {

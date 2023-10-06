@@ -129,6 +129,9 @@ body {
   background-color: red;
   z-index: 22;
 }
+.nav--active {
+  transform: translateX(0);
+}
 .nav__item {
   position: relative;
   display: block;
@@ -153,8 +156,17 @@ body {
 .nav__item:hover::before {
   transform: scaleY(1);
 }
-.nav--active {
-  transform: translateX(0%);
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-items-animation {
+  animation: navItemsAnimation 1s;
 }
 
 .header {
