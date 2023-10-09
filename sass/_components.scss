@@ -38,11 +38,40 @@
 		transform: scaleY(0); /*czyli element nie będzie widoczny*/
 		transform-origin: top;
 		transition: transform 0.3s;
-		z-index: -1;/*żeby nie przesłaniał napisu*/
+		z-index: -1; /*żeby nie przesłaniał napisu*/
 	}
 	&:hover::before {
 		/* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
 		transform: scaleY(1); /*czyli elment się pojawi*/
 		transform-origin: bottom;
+	}
+}
+.dreams__section-heading {
+	position: relative;
+	margin-bottom: 2em;
+	font-size: 3rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: $main-color;
+	letter-spacing: 2px;
+}
+.section-padding {
+	padding: 6em 2em;
+}
+@media (min-width: 768px) {
+	.dreams__section-heading {
+		font-size: 3.6rem;
+	}
+	.section-padding {
+		padding: 8em 2em;
+	}
+}
+@media (min-width: 992px) {
+	.dreams__section-heading {
+		font-size: 4.8rem;
+	}
+	.section-padding {
+		padding: 10em 2em;
 	}
 }

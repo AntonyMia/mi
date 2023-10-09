@@ -49,6 +49,37 @@
   transform-origin: bottom;
 }
 
+.dreams__section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+@media (min-width: 768px) {
+  .dreams__section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
+}
+@media (min-width: 992px) {
+  .dreams__section-heading {
+    font-size: 4.8rem;
+  }
+  .section-padding {
+    padding: 10em 2em;
+  }
+}
 *,
 *::after,
 *::before {
@@ -63,10 +94,8 @@ html {
 }
 
 body {
-  min-height: 100vh;
   font-family: "Dancing Script", cursive;
   font-family: "Open Sans", sans-serif;
-  overflow: hidden;
   color: #fff;
   background: #2e2e2e;
   font-size: 1.6rem;
@@ -172,9 +201,9 @@ body {
 .header {
   position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 2em;
   height: 75vh;
   text-align: center;
@@ -211,6 +240,35 @@ body {
   background-color: #eee;
 }
 
+.dreams__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.dreams__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.dreams__title {
+  margin-bottom: 1em;
+}
+.dreams__text {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 576px) {
+  .dreams__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dreams__box-text {
+    width: 55%;
+  }
+  .dreams__box-text--right { /*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
+    text-align: right;
+    background-color: green;
+  }
+}
 @media (min-width: 768px) {
   .white-block {
     height: 50px;

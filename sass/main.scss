@@ -14,10 +14,10 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	min-height: 100vh;
+	// min-height: 100vh;
 	font-family: 'Dancing Script', cursive;
 	font-family: 'Open Sans', sans-serif;
-	overflow: hidden;
+	// overflow: hidden;/*body nie może mieć oveflow:hidden, bo nie będzie możlwe pzrewijanie*/
 	color: #fff;
 	background: $dark;
 	font-size: 1.6rem;
@@ -120,9 +120,9 @@ body {
 .header {
 	position: relative;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	padding: 2em;
 	height: 75vh;
 	text-align: center;
@@ -156,8 +156,42 @@ body {
 		}
 	}
 }
+//main
+//dreams section
+.dreams {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 2em 0;
+	}
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	&__title {
+		margin-bottom: 1em;
+	}
+	&__text {
+		font-size: 1.4rem;
+	}
+}
 
 // media
+@media (min-width: 576px) {
+	.dreams {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+			&-text {
+				width: 55%;
+				&--right { /*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
+					text-align: right;
+					background-color: green;
+				}
+			}
+		}
+	}
+}
 @media (min-width: 768px) {
 	.white-block {
 		height: 50px;
