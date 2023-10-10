@@ -227,6 +227,9 @@ body {
 			font-size: 1.6rem;
 		}
 	}
+	.dreams {
+		font-size: 1.8rem;
+	}
 }
 @media (min-width: 992px) {
 	.burger-btn {
@@ -237,6 +240,23 @@ body {
 		background-image: $blue-gradient, url('../img/big_palms.jpg');
 		&__heading {
 			font-size: 10rem;
+		}
+	}
+	.dreams {
+		&__box {
+			margin: 5em;
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				margin-bottom: 2.5em;
+			}
+		}
+		&__title {
+			font-size: 3.6rem;
+		}
+		&__text {
+			font-size: 2.2rem;
 		}
 	}
 }

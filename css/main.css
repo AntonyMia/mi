@@ -297,6 +297,9 @@ body {
   .header__btn {
     font-size: 1.6rem;
   }
+  .dreams {
+    font-size: 1.8rem;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -308,5 +311,20 @@ body {
   }
   .header__heading {
     font-size: 10rem;
+  }
+  .dreams__box {
+    margin: 5em;
+  }
+  .dreams__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+  }
+  .dreams__title {
+    font-size: 3.6rem;
+  }
+  .dreams__text {
+    font-size: 2.2rem;
   }
 }/*# sourceMappingURL=main.css.map */
