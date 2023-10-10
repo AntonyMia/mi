@@ -263,10 +263,24 @@ body {
   }
   .dreams__box-text {
     width: 55%;
+    border: 3px salmon solid;
   }
-  .dreams__box-text--right { /*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
+  .dreams__box-text--right {
+    /*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
     text-align: right;
     background-color: green;
+  }
+  .dreams__box-img {
+    width: 40%;
+    border: 3px rgb(85, 140, 179) dotted;
+  }
+  .dreams__box-img--right {
+    order: 1;
+  }
+  .dreams__img {
+    margin-bottom: 0;
+    max-height: 300px;
+    border: 4px white solid;
   }
 }
 @media (min-width: 768px) {
