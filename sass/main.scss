@@ -175,6 +175,22 @@ body {
 		font-size: 1.4rem;
 	}
 }
+// hero image section
+.hero-img {
+	position: relative;
+	background-color: burlywood;
+	padding: 10em 2em;
+	@include heroImages('../img/polynesia_small.jpg');
+	overflow: hidden;
+	&__title {
+		margin-bottom: 0.5em;
+		font-family: 'Dancing Script', cursive;
+		font-size: 4.8rem;
+	}
+	&__text {
+		padding: 1em 0;
+	}
+}
 
 // media
 @media (min-width: 576px) {
@@ -230,6 +246,17 @@ body {
 	.dreams {
 		font-size: 1.8rem;
 	}
+	.hero-img {
+		padding: 30em 2em;
+		&__text {
+			font-size: 2.2rem;
+		}
+
+		hr {
+			margin: 0 auto; /*żeby wyśrodkować*/
+			width: 70%;
+		}
+	}
 }
 @media (min-width: 992px) {
 	.burger-btn {
@@ -237,7 +264,7 @@ body {
 		top: 5%;
 	}
 	.header {
-		background-image: $blue-gradient, url('../img/big_palms.jpg');
+		@include heroImages('../img/polynesia_big.jpg');
 		&__heading {
 			font-size: 10rem;
 		}
@@ -257,6 +284,21 @@ body {
 		}
 		&__text {
 			font-size: 2.2rem;
+		}
+	}
+	.hero-img {
+		padding: 40em 2em;
+		background-image: $blue-gradient, url('../img/polynesia_big.jpg');
+
+		&__title {
+			font-size: 7.2rem;
+		}
+
+		hr {
+			// margin: 0 auto; /*tym razem już nie powtarzamy bo było w poprzednim breakpoincie*/
+			width: 60%;
+			max-width: 900px;
+			
 		}
 	}
 }

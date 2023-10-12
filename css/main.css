@@ -49,7 +49,7 @@
   transform-origin: bottom;
 }
 
-.dreams__section-heading {
+.dreams__section-heading, .islands__section-heading {
   position: relative;
   margin-bottom: 2em;
   font-size: 3rem;
@@ -212,6 +212,8 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  text-align: center;
+  color: #fff;
   /*pokazujemy co to za zmienna, używamy cudzysłowia*/
   background-attachment: scroll;
 }
@@ -254,6 +256,27 @@ body {
 }
 .dreams__text {
   font-size: 1.4rem;
+}
+
+.hero-img {
+  position: relative;
+  background-color: burlywood;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/polynesia_small.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.hero-img__title {
+  margin-bottom: 0.5em;
+  font-family: "Dancing Script", cursive;
+  font-size: 4.8rem;
+}
+.hero-img__text {
+  padding: 1em 0;
 }
 
 @media (min-width: 576px) {
@@ -300,6 +323,16 @@ body {
   .dreams {
     font-size: 1.8rem;
   }
+  .hero-img {
+    padding: 30em 2em;
+  }
+  .hero-img__text {
+    font-size: 2.2rem;
+  }
+  .hero-img hr {
+    margin: 0 auto; /*żeby wyśrodkować*/
+    width: 70%;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -307,7 +340,12 @@ body {
     top: 5%;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/big_palms.jpg");
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/polynesia_big.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: #fff;
   }
   .header__heading {
     font-size: 10rem;
@@ -326,5 +364,16 @@ body {
   }
   .dreams__text {
     font-size: 2.2rem;
+  }
+  .hero-img {
+    padding: 40em 2em;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/polynesia_big.jpg");
+  }
+  .hero-img__title {
+    font-size: 7.2rem;
+  }
+  .hero-img hr {
+    width: 60%;
+    max-width: 900px;
   }
 }/*# sourceMappingURL=main.css.map */
