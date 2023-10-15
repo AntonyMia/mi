@@ -14,3 +14,8 @@
 	text-align: center;
 	color: $pure-white;
 }
+@mixin islandCardStyles {
+	position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+	left: 50%;
+	transform: translateX(-50%);
+}

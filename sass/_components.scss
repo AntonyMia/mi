@@ -15,7 +15,6 @@
 		bottom: 0;
 		left: -50px;
 		transform: skew(45deg); /*pochylenie w lewo*/
-
 	}
 	&-right {
 		top: 0;
@@ -36,18 +35,19 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		transform: scaleY(0); /*czyli element nie będzie widoczny*/
-		transform-origin: top;
+		transform: scaleX(0); /*czyli element nie będzie widoczny*/
+		transform-origin: right;
 		transition: transform 0.3s;
 		z-index: -1; /*żeby nie przesłaniał napisu*/
 	}
 	&:hover::before {
 		/* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
-		transform: scaleY(1); /*czyli elment się pojawi*/
-		transform-origin: bottom;
+		transform: scaleX(1); /*czyli elment się pojawi*/
+		transform-origin: left;
 	}
 }
-.dreams__section-heading, .islands__section-heading {
+.dreams__section-heading,
+.islands__section-heading {
 	position: relative;
 	margin-bottom: 2em;
 	font-size: 3rem;

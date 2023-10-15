@@ -38,18 +38,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  transform: scaleY(0); /*czyli element nie będzie widoczny*/
-  transform-origin: top;
+  transform: scaleX(0); /*czyli element nie będzie widoczny*/
+  transform-origin: right;
   transition: transform 0.3s;
   z-index: -1; /*żeby nie przesłaniał napisu*/
 }
 .btn-special-animation:hover::before {
   /* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
-  transform: scaleY(1); /*czyli elment się pojawi*/
-  transform-origin: bottom;
+  transform: scaleX(1); /*czyli elment się pojawi*/
+  transform-origin: left;
 }
 
-.dreams__section-heading, .islands__section-heading {
+.dreams__section-heading,
+.islands__section-heading {
   position: relative;
   margin-bottom: 2em;
   font-size: 3rem;
@@ -279,6 +280,113 @@ body {
   padding: 1em 0;
 }
 
+.islands__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px; /*width czyta sobie z rodzica, a ten z z .wrapper*/
+  color: #fff;
+  border: 2px solid black;
+  text-align: center;
+  perspective: 1000px; /*żeby osiągnąć efekt motyla*/
+}
+.islands__card:hover {
+  /*zwróć uwagę na sytuację, gdy hover odziałuje na więcej niż 2 klasy, wtedy należy nie wpisywać po spacji nazwy klasy, tylko otworzyć nawias i wpisać tu wszystkie klasy, na które odziałuje hover*/
+  /*Robienie flipa poniżej:*/
+}
+.islands__card:hover .islands__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.islands__card:hover .islands__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.islands__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  transition: transform 1s, opacity 1s;
+}
+.islands__card-img--first {
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../img/islands1.jpg");
+  background-attachment: fixed;
+}
+.islands__card-img--second {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/islands2.jpg");
+  background-attachment: fixed;
+}
+.islands__card-img--third {
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../img/islands3.jpg");
+  background-attachment: fixed;
+}
+.islands__card-img-title {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.8rem;
+}
+.islands__card-img-info {
+  /* nie myl z klasą islands__card-info*/
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+.islands__card-img-info .fas.fa-angle-double-right {
+  margin-right: 0.3em;
+}
+.islands__card-info {
+  position: absolute; /* nadanie top:0, bottom:0, right:0, left:0 rozciąga treść z &-info na całego rodzica, czyli islands__card, stąd czyta sobie swoje wymiary*/
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: radial-gradient(circle at top right, rgb(0, 78, 255) 0%, rgb(0, 212, 255) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: transform 1s, opacity 1s;
+}
+.islands__card-info-title {
+  position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.2em;
+  font-family: "Dancing Script", cursive;
+  font-size: 2.8rem;
+}
+.islands__card-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+.islands__card-info-list-item {
+  padding: 1em;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #eee;
+}
+.islands__card-info-list-item:nth-child(5) {
+  border-bottom: none;
+}
+.islands__card-info-btn {
+  position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  width: 40%;
+  border: 1px solid black;
+  background-color: #00ffaa;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.islands__card-info-btn::before {
+  background-color: #0fe29c; /* dodajesz sobie background-color do before, który był opisany w _components przy klasie btn-special-animation*/
+}
+
 @media (min-width: 576px) {
   .dreams__box {
     flex-direction: row;
@@ -289,7 +397,7 @@ body {
     border: 3px salmon solid;
   }
   .dreams__box-text--right {
-    /*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
+    /*uwaga na taki zapis bo w CSS to nie jest dziecko*/
     text-align: right;
     background-color: green;
   }

@@ -192,9 +192,114 @@ body {
 	}
 }
 //islands
-.islands{
-	&__card{
-		
+.islands {
+	&__card {
+		position: relative;
+		margin: 1em 0;
+		height: 450px; /*width czyta sobie z rodzica, a ten z z .wrapper*/
+		color: $pure-white;
+		border: 2px solid black;
+		text-align: center;
+		perspective: 1000px; /*żeby osiągnąć efekt motyla*/
+		&:hover {
+			/*zwróć uwagę na sytuację, gdy hover odziałuje na więcej niż 2 klasy, wtedy należy nie wpisywać po spacji nazwy klasy, tylko otworzyć nawias i wpisać tu wszystkie klasy, na które odziałuje hover*/
+			/*Robienie flipa poniżej:*/
+			.islands__card-img {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.islands__card-info {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+		}
+
+		&-img {
+			padding: 2em;
+			height: 100%;
+			border-radius: 8px;
+			background-size: cover;
+			transition: transform 1s, opacity 1s;
+			&--first {
+				background-image: $light-blue-gradient, url('../img/islands1.jpg');
+				background-attachment: fixed;
+			}
+			&--second {
+				background-image: $blue-gradient, url('../img/islands2.jpg');
+				background-attachment: fixed;
+			}
+			&--third {
+				background-image: $purple-gradient, url('../img/islands3.jpg');
+				background-attachment: fixed;
+			}
+			&-title {
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+			&-info {
+				/* nie myl z klasą islands__card-info*/
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+				font-size: 1.8rem;
+				.fas.fa-angle-double-right {
+					margin-right: 0.3em;
+				}
+			}
+		}
+		&-info {
+			position: absolute; /* nadanie top:0, bottom:0, right:0, left:0 rozciąga treść z &-info na całego rodzica, czyli islands__card, stąd czyta sobie swoje wymiary*/
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-image: $light-blue-gradient-solid;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			border-radius: 8px;
+			opacity: 0;
+			transform: rotateY(180deg);
+			transition: transform 1s, opacity 1s;
+
+			&-title {
+				// position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+				// left: 50%;
+				// transform: translateX(-50%);
+				@include islandCardStyles;
+				top: 1.2em;
+				font-family: 'Dancing Script', cursive;
+				font-size: 2.8rem;
+			}
+			&-list {
+				margin: 0 auto;
+				width: 70%;
+				list-style: none;
+				// background-color: aquamarine;
+				&-item {
+					padding: 1em;
+					font-size: 1.4rem;
+					border-bottom: 1px solid $light-white;
+					&:nth-child(5) {
+						border-bottom: none;
+					}
+				}
+			}
+			&-btn {
+				@include islandCardStyles;
+				bottom: 2em;
+				padding: 1em;
+				border-radius: 8px;
+				width: 40%;
+				border: 1px solid black;
+				background-color: $green-color;
+				cursor: pointer;
+				font-size: 1.8rem;
+				&::before {
+					background-color: $green-color-hover; /* dodajesz sobie background-color do before, który był opisany w _components przy klasie btn-special-animation*/
+				}
+			}
+		}
 	}
 }
 
@@ -209,7 +314,7 @@ body {
 				width: 55%;
 				border: 3px salmon solid;
 				&--right {
-					/*uwaga na teaki zapis bo w CSS to nie jest dziecko*/
+					/*uwaga na taki zapis bo w CSS to nie jest dziecko*/
 					text-align: right;
 					background-color: green;
 				}
@@ -304,7 +409,6 @@ body {
 			// margin: 0 auto; /*tym razem już nie powtarzamy bo było w poprzednim breakpoincie*/
 			width: 60%;
 			max-width: 900px;
-			
 		}
 	}
 }
