@@ -198,9 +198,10 @@ body {
 		margin: 1em 0;
 		height: 450px; /*width czyta sobie z rodzica, a ten z z .wrapper*/
 		color: $pure-white;
-		border: 2px solid black;
+		// border: 2px solid black;
 		text-align: center;
 		perspective: 1000px; /*żeby osiągnąć efekt motyla*/
+		background-color: yellow;
 		&:hover {
 			/*zwróć uwagę na sytuację, gdy hover odziałuje na więcej niż 2 klasy, wtedy należy nie wpisywać po spacji nazwy klasy, tylko otworzyć nawias i wpisać tu wszystkie klasy, na które odziałuje hover*/
 			/*Robienie flipa poniżej:*/
@@ -248,7 +249,7 @@ body {
 			}
 		}
 		&-info {
-			position: absolute; /* nadanie top:0, bottom:0, right:0, left:0 rozciąga treść z &-info na całego rodzica, czyli islands__card, stąd czyta sobie swoje wymiary*/
+			position: absolute; /* nadanie top:0, bottom:0, right:0, left:0 rozciąga treść z &-info na całego rodzica, czyli  na islands__card, stąd &-info czyta sobie swoje wymiary*/
 			top: 0;
 			bottom: 0;
 			left: 0;
@@ -368,6 +369,18 @@ body {
 			width: 70%;
 		}
 	}
+	.islands {
+		&__cards {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap; /*to daje możliwość, że elementy będą przenosozne do kolejnej linii, jeśli zajdzie taka potrzeba*/
+			background-color: greenyellow;
+		}
+		&__card {
+			margin: 1em;
+			width: 45%;
+		}
+	}
 }
 @media (min-width: 992px) {
 	.burger-btn {
@@ -410,5 +423,16 @@ body {
 			width: 60%;
 			max-width: 900px;
 		}
+	}
+}
+@media (min-width: 1100px) {
+	.islands {
+		&__cards {
+		flex-wrap: nowrap;
+		}
+		// &__card {
+		// width: 50%;
+		// margin: 0 auto;
+		// }
 	}
 }
