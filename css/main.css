@@ -50,7 +50,7 @@
 }
 
 .dreams__section-heading,
-.islands__section-heading {
+.islands__section-heading, .offers__section-heading {
   position: relative;
   margin-bottom: 2em;
   font-size: 3rem;
@@ -385,6 +385,11 @@ body {
 }
 .islands__card-info-btn::before {
   background-color: #0fe29c; /* dodajesz sobie background-color do before, który był opisany w _components przy klasie btn-special-animation*/
+}
+
+.offers {
+  position: relative;
+  background-color: pink;
 }
 
 @media (min-width: 576px) {

@@ -303,7 +303,11 @@ body {
 		}
 	}
 }
-
+//offers
+.offers {
+	position: relative;
+	background-color: pink;
+}
 // media
 @media (min-width: 576px) {
 	.dreams {
@@ -428,7 +432,7 @@ body {
 @media (min-width: 1100px) {
 	.islands {
 		&__cards {
-		flex-wrap: nowrap;
+			flex-wrap: nowrap;
 		}
 		// &__card {
 		// width: 50%;
