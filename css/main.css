@@ -389,9 +389,23 @@ body {
 
 .offers {
   position: relative;
-  background-color: pink;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offer4_small.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
 }
-
+.offers .offers__section-heading {
+  color: #fff;
+}
+.offers__option {
+  margin: 1em 0;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+  overflow: hidden;
+}
 @media (min-width: 576px) {
   .dreams__box {
     flex-direction: row;

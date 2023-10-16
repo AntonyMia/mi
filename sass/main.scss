@@ -17,7 +17,7 @@ body {
 	// min-height: 100vh;
 	font-family: 'Dancing Script', cursive;
 	font-family: 'Open Sans', sans-serif;
-	// overflow: hidden;/*body nie może mieć oveflow:hidden, bo nie będzie możlwe pzrewijanie*/
+	// overflow: hidden;/*body nie może mieć oveflow:hidden, bo nie będzie możlwe przewijanie*/
 	color: #fff;
 	background: $dark;
 	font-size: 1.6rem;
@@ -306,7 +306,20 @@ body {
 //offers
 .offers {
 	position: relative;
-	background-color: pink;
+	@include heroImages('../img/offer4_small.jpg');
+	overflow: hidden;
+	.offers__section-heading {
+		color: $pure-white;
+	}
+	&__option {
+		margin: 1em 0;
+		background-color: $pure-white;
+		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+		overflow: hidden;
+		&-img{
+			
+		}
+	}
 }
 // media
 @media (min-width: 576px) {
