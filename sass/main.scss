@@ -365,9 +365,9 @@ body {
 	overflow: hidden;
 }
 .abc img {
-	
+	object-fit: contain;
+	object-position: 80%, 30%;
 }
-
 
 // media
 @media (min-width: 576px) {

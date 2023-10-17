@@ -446,6 +446,13 @@ body {
   overflow: hidden;
 }
 
+.abc img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 80%, 30%;
+     object-position: 80%, 30%;
+}
+
 @media (min-width: 576px) {
   .dreams__box {
     flex-direction: row;
