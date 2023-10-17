@@ -213,8 +213,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center;
-  color: #fff;
   /*pokazujemy co to za zmienna, używamy cudzysłowia*/
   background-attachment: scroll;
 }
@@ -267,8 +265,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center;
-  color: #fff;
   overflow: hidden;
 }
 .hero-img__title {
@@ -393,8 +389,6 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  text-align: center;
-  color: #fff;
   overflow: hidden;
 }
 .offers .offers__section-heading {
@@ -402,10 +396,56 @@ body {
 }
 .offers__option {
   margin: 1em 0;
+  width: 100%;
   background-color: #fff;
   box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
+  overflow: hidden; /*żeby zdjęcie nie wyciekało przy powiększeniu*/
+}
+.offers__option-img {
+  width: 100%;
+  height: 50%;
+  transition: transform 0.3s;
+}
+.offers__option-img:hover {
+  transform: scale(1.1);
+}
+.offers__option-info {
+  padding: 2em;
+  color: black;
+  background-color: #fff; /* nadanie tła i dużego Z-index powoduje, że zdjęcie, kiedy się powiększa, nie wchodzi na nasz tekst*/
+  z-index: 10;
+}
+.offers__option-heading {
+  margin-bottom: 0.5em;
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+.offers__option-text {
+  margin-bottom: 0.5em;
+  font-size: 1.3rem;
+  color: #2e2e2e;
+}
+.offers__option-btn {
+  margin-top: 1em;
+  padding: 0.8em;
+  width: 100%;
+  font-size: 2rem;
+  background-color: #1755e7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.offers__option-btn:hover::before {
+  background-color: #164dcc;
+}
+
+.abc {
+  width: 200px;
+  height: 200px;
+  border-radius: 30px;
   overflow: hidden;
 }
+
 @media (min-width: 576px) {
   .dreams__box {
     flex-direction: row;
@@ -431,6 +471,31 @@ body {
     margin-bottom: 0;
     max-height: 300px;
     border: 4px white solid;
+  }
+  .offers__option {
+    display: flex;
+    margin: 2em 0;
+    background-color: yellow;
+  }
+  .offers__option-img {
+    width: 50%;
+    height: auto; /*bardzo ważne, żeby to wpisać, dzięki tej komendzie zdjęcia dostosowują się do miejsca, które jest im dane w .offers__option, u  mnie zajmują całe miejsce, które jest dla nich zarezerwowane*/
+    border-radius: 8px;
+  }
+  .offers__option-img--right {
+    order: 1; /*dzięki temu zdjęcie offer2 pojawi się po prawej stronie*/
+  }
+  .offers__option-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .offers__option-heading {
+    margin-bottom: 0.5em;
+    font-size: 3.6rem;
+  }
+  .offers__option-btn {
+    padding: 1em;
   }
 }
 @media (min-width: 768px) {
@@ -481,8 +546,6 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    text-align: center;
-    color: #fff;
   }
   .header__heading {
     font-size: 10rem;
@@ -512,6 +575,20 @@ body {
   .hero-img hr {
     width: 60%;
     max-width: 900px;
+  }
+  .offers {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/offer4_big.jpg"); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .offers__option-img {
+    -o-object-fit: cover;
+       object-fit: cover; /*Styl object-fit służy do określania, w jaki sposób należy zmieniać rozmiar elementu img lub video, aby pasował do jego kontenera.*/
+    height: 300px;
+  }
+  .offers__option-text {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1100px) {

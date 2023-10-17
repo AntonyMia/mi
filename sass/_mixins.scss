@@ -11,8 +11,6 @@
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	text-align: center;
-	color: $pure-white;
 }
 @mixin islandCardStyles {
 	position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/

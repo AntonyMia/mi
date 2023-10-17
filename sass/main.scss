@@ -313,14 +313,62 @@ body {
 	}
 	&__option {
 		margin: 1em 0;
+		width: 100%;
 		background-color: $pure-white;
 		box-shadow: 5px 5px 10px rgba(46, 46, 46, 0.18);
-		overflow: hidden;
-		&-img{
-			
+		overflow: hidden; /*żeby zdjęcie nie wyciekało przy powiększeniu*/
+		&-img {
+			width: 100%;
+			height: 50%;
+			transition: transform 0.3s;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&-info {
+			padding: 2em;
+			color: black;
+			background-color: $pure-white; /* nadanie tła i dużego Z-index powoduje, że zdjęcie, kiedy się powiększa, nie wchodzi na nasz tekst*/
+			z-index: 10;
+		}
+		&-heading {
+			margin-bottom: 0.5em;
+			font-size: 2.4rem;
+			font-weight: 300;
+		}
+		&-text {
+			margin-bottom: 0.5em;
+			font-size: 1.3rem;
+			color: $dark;
+		}
+		&-btn {
+			margin-top: 1em;
+			padding: 0.8em;
+			width: 100%;
+			font-size: 2rem;
+			// height w buttonie na chwilę obecną mogę ustawiać za pomocą wielkości czcionki
+			background-color: $main-color;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			&:hover::before {
+				background-color: $secondary-color;
+			}
 		}
 	}
 }
+
+.abc {
+	width: 200px;
+	height: 200px;
+	border-radius: 30px;
+	overflow: hidden;
+}
+.abc img {
+	
+}
+
+
 // media
 @media (min-width: 576px) {
 	.dreams {
@@ -352,6 +400,33 @@ body {
 			margin-bottom: 0;
 			max-height: 300px;
 			border: 4px white solid;
+		}
+	}
+	.offers {
+		&__option {
+			display: flex;
+			margin: 2em 0;
+			background-color: yellow;
+			&-img {
+				width: 50%;
+				height: auto; /*bardzo ważne, żeby to wpisać, dzięki tej komendzie zdjęcia dostosowują się do miejsca, które jest im dane w .offers__option, u  mnie zajmują całe miejsce, które jest dla nich zarezerwowane*/
+				border-radius: 8px;
+				&--right {
+					order: 1; /*dzięki temu zdjęcie offer2 pojawi się po prawej stronie*/
+				}
+			}
+			&-info {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+			&-heading {
+				margin-bottom: 0.5em;
+				font-size: 3.6rem;
+			}
+			&-btn {
+				padding: 1em;
+			}
 		}
 	}
 }
@@ -439,6 +514,18 @@ body {
 			// margin: 0 auto; /*tym razem już nie powtarzamy bo było w poprzednim breakpoincie*/
 			width: 60%;
 			max-width: 900px;
+		}
+	}
+	.offers {
+		@include heroImages('../img/offer4_big.jpg');
+		&__option {
+			&-img {
+				object-fit: cover; /*Styl object-fit służy do określania, w jaki sposób należy zmieniać rozmiar elementu img lub video, aby pasował do jego kontenera.*/
+				height: 300px;
+			}
+			&-text {
+				font-size: 1.5rem;
+			}
 		}
 	}
 }
