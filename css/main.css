@@ -440,17 +440,18 @@ body {
 }
 
 .abc {
-  width: 200px;
-  height: 200px;
+  width: 700px;
+  height: 600px;
   border-radius: 30px;
   overflow: hidden;
+  background-color: aqua;
 }
 
 .abc img {
   -o-object-fit: contain;
      object-fit: contain;
-  -o-object-position: 80%, 30%;
-     object-position: 80%, 30%;
+  -o-object-position: left bottom;
+     object-position: left bottom;
 }
 
 @media (min-width: 576px) {
