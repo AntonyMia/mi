@@ -431,7 +431,50 @@ body {
 		}
 	}
 }
-
+//reviews
+@media (max-width:767) {
+	.reviews.section-padding {
+		padding: 6em 0;
+	}
+}
+.reviews {
+	&__box {
+		position: relative;
+		margin: 2em;
+		padding: 2em;
+		border-radius: 8px;
+		box-shadow: 12px 10px 10px #2e2e2e2e;
+		background-color: green;
+		transition: transform 0.3s;
+		&:hover {
+			transform: scale(.9);
+		}
+	}
+	&__box-img {
+		position: absolute;
+		top: 8%;
+		left: 75%;
+		transform: translate(-50%, -50%);
+		// background-color: floralwhite;
+		img {
+			width: 80px;
+			height: 80px;
+			object-fit: cover; /*zakrywa całe pole*/
+			border-radius: 50%;
+		}
+	}
+	&__box-quote {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		color: $main-color;
+	}
+	&__box-text {
+		margin-bottom: 1em;
+		font-size: 1.4rem;
+		color: $dark;
+		// background-color: blanchedalmond;
+	}
+}
 @media (min-width: 768px) {
 	.white-block {
 		height: 50px;

@@ -1,19 +1,40 @@
+// @mixin burgerBtn {
+// 	position: absolute;
+// 	right: 0;
+// 	height: 3px;
+// 	background-color: $pure-white;
+// 	content: '';
+// 	transition: width 0.3s;
+// }
+// @mixin heroImages($bgImg) {
+// 	background-image: $blue-gradient, url($bgImg); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+// 	background-size: cover;
+// 	background-position: center;
+// 	background-attachment: fixed;
+// }
+// @mixin islandCardStyles {
+// 	position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+// 	left: 50%;
+// 	transform: translateX(-50%);
+// }
 @mixin burgerBtn {
 	position: absolute;
 	right: 0;
 	height: 3px;
-	background-color: $pure-white;
 	content: '';
+	background-color: $pure-white;
 	transition: width 0.3s;
 }
+
 @mixin heroImages($bgImg) {
-	background-image: $blue-gradient, url($bgImg); /*bez cudzysłowiu, https://developer.mozilla.org/en-US/docs/Web/CSS/background-image?retiredLocale=pl*/ /*po url nie może być spacji*/
+	background-image: $blue-gradient, url($bgImg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 }
+
 @mixin islandCardStyles {
-	position: absolute; /*rodzic też ma position absolute, ale to nie przeszkadza*/
+	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
 }
