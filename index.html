@@ -33,7 +33,7 @@
     <header class="header section">
         <h1 class="header__heading">Tropical Paradise</h1>
         <p class="header__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <a href="offers" class="header__btn btn-special-animation">Poznaj ofertę</a>
+        <a href="#offers" class="header__btn btn-special-animation">Poznaj ofertę</a>
         <div class="white-block white-block-left"></div>
     </header>
     <main class="main">
@@ -213,52 +213,71 @@
                 </div>
             </div>
         </section>
-        <!--reviews-->
+        <!--REVIEWS-->
         <div class="reviews section section-padding white-section" id="reviews">
-            <h2 class="reviews__section-heading">
-                <div class="wrapper">
-                    <div class="reviews__boxes">
-                        <!--one:-->
-                        <div class="reviews__box">
-                            <div class="reviews__box-img">
-                                <img src="./img/opinions1.jpg" alt="Anna Nowak">
-                            </div>
-                            <div class="reviews__box-info">
-                                <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
-                                <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
-                                <strong>Anna Nowak</strong>
-                            </div>
+            <h2 class="reviews__section-heading">Opinie</h2>
+            <div class="wrapper">
+                <div class="reviews__boxes">
+                    <!--one:-->
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/opinions1.jpg" alt="Anna Nowak">
                         </div>
-                        <!--two:-->
-                        <div class="reviews__box">
-                            <div class="reviews__box-img">
-                                <img src="./img/opinions2.jpg" alt="Bartosz Salski">
-                            </div>
-                            <div class="reviews__box-info">
-                                <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
-                                <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
-                                <strong>Bartosz Salski</strong>
-                            </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
+                            <strong>Anna Nowak</strong>
                         </div>
-                        <!--three-->
-                        <div class="reviews__box">
-                            <div class="reviews__box-img">
-                                <img src="./img/opinions3.jpg" alt="Paulina Pooter">
-                            </div>
-                            <div class="reviews__box-info">
-                                <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
-                                <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                    Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
-                                <strong>Paulina Pooter</strong>
-                            </div>
+                    </div>
+                    <!--two:-->
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/opinions2.jpg" alt="Bartosz Salski">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
+                            <strong>Bartosz Salski</strong>
+                        </div>
+                    </div>
+                    <!--three-->
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/opinions3.jpg" alt="Paulina Pooter">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="reviews__box-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Minus non ipsum rem magni? Fugiat perferendis nisi, nulla vero veniam id?</p>
+                            <strong>Paulina Pooter</strong>
                         </div>
                     </div>
                 </div>
-            </h2>
+            </div>
         </div>
-</main>
+        <!--CONTACT-->
+        <section class="contact section section-padding white-section" id="contact">
+            <div class="white-block white-block-left"></div>
+            <div class="white-block white-block-right"></div>
+            <h2 class="contact__section-heading">Kontakt</h2>
+            <div class="wrapper">
+                <form action="" class="contact__form">
+                    <div class="contact__form-top">
+                        <label for="name" class="contact__form-label">Imię i nazwisko</label>
+                        <input type="text" class="contact__form-input" id="name"> <!--żeby powiązać label z input w label daliśmy "for" - name ; a w input daliśmy "id" = name-->
+
+                        <label for="email" class="contact__form-label">Adres e-mail</label>
+                        <input type="text" class="contact__form-input" id="email">
+                    </div>
+                    <label for="msg" class="contact__form-label">Wprowadź wiadomość</label>
+                   <textarea name="" id="msg" class="contact__form-textarea"></textarea>
+                   <button type="submit"></button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
