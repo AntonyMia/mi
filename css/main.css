@@ -513,6 +513,23 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 1.6rem;
+  max-width: 100%; /*w doniesieniu do rodzica*/
+  width: 100%;
+  min-height: 150px;
+}
+.contact__form-btn {
+  align-self: flex-end; /*align-self dotyczy dziecka, gdy rodzic ma flex*/
+  padding: 1em;
+  width: 100%;
+  max-width: 300px; /*nadajemy taki układ z width:100 i max width: 300px, żeby nie doszło do sytuacji, gdzie zmniejszamy stronę np do 280px szerokości a przycisk cały czas wystaje poza nią, bo ma 300px*; inaczej rzecz ujmując, dopóki strona ma więcej niż 300px przycisk będzie miał 300px, a jeśli szerokość storny będzie mniejsza, to przycisk będzie miał szerokości tyle ile szerokość strony*/
+  color: #fff;
+  background-color: #1755e7;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.contact__form-btn::before {
+  background-color: #164dcc;
 }
 
 @media (min-width: 576px) {
