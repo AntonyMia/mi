@@ -105,7 +105,7 @@ body {
 .burger-btn {
   position: fixed;
   top: 20px;
-  right: 7%;
+  right: 20px;
   padding: 1em;
   background: none;
   border: 1px solid transparent;
@@ -156,8 +156,9 @@ body {
   height: 100vh;
   width: 100%;
   transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.036, 1);
   background-color: red;
-  z-index: 22;
+  z-index: 100;
 }
 .nav--active {
   transform: translateX(0);
@@ -167,7 +168,7 @@ body {
   display: block;
   margin: 0.5em 0;
   padding: 0.5em 2em;
-  font-size: 4.8rem;
+  font-size: 2.8rem;
   color: #fff;
   text-decoration: none;
 }
@@ -175,13 +176,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  content: "";
-  transform: scale(0);
   width: 3px;
   height: 100%;
+  transform: scaleY(0);
   background-color: #fff;
   transition: transform 0.3s;
   transform-origin: top;
+  content: "";
 }
 .nav__item:hover::before {
   transform: scaleY(1);
@@ -196,7 +197,7 @@ body {
   }
 }
 .nav-items-animation {
-  animation: navItemsAnimation 1.8s backwards;
+  animation: navItemsAnimation 1.8s both;
 }
 
 .header {
@@ -233,7 +234,7 @@ body {
   color: #2e2e2e;
   text-decoration: none; /*znika podkreślenie*/
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -481,6 +482,37 @@ body {
   margin-bottom: 1em;
   font-size: 1.4rem;
   color: #2e2e2e;
+}
+
+.contact {
+  position: relative; /*żeby było widać white-block white-block-left i right , które mają position absolute*/
+  background-color: #eee;
+  overflow: hidden;
+}
+.contact .white-block-left {
+  background-color: #2e2e2e;
+}
+.contact__form, .contact__form-top {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form-input {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-textarea {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
 }
 
 @media (min-width: 576px) {
