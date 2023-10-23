@@ -433,15 +433,55 @@ body {
 		align-self: flex-end; /*align-self dotyczy dziecka, gdy rodzic ma flex*/
 		padding: 1em;
 		width: 100%;
-		max-width: 300px;/*nadajemy taki układ z width:100 i max width: 300px, żeby nie doszło do sytuacji, gdzie zmniejszamy stronę np do 280px szerokości a przycisk cały czas wystaje poza nią, bo ma 300px*; inaczej rzecz ujmując, dopóki strona ma więcej niż 300px przycisk będzie miał 300px, a jeśli szerokość storny będzie mniejsza, to przycisk będzie miał szerokości tyle ile szerokość strony*/ 
-		color:$pure-white;
+		max-width: 300px; /*nadajemy taki układ z width:100 i max width: 300px, żeby nie doszło do sytuacji, gdzie zmniejszamy stronę np do 280px szerokości a przycisk cały czas wystaje poza nią, bo ma 300px*; inaczej rzecz ujmując, dopóki strona ma więcej niż 300px przycisk będzie miał 300px, a jeśli szerokość storny będzie mniejsza, to przycisk będzie miał szerokości tyle ile szerokość strony*/
+		color: $pure-white;
 		background-color: $main-color;
 		border: none;
 		border-radius: 8px;
 		cursor: pointer;
 		&::before {
-			background-color: $secondary-color ;
+			background-color: $secondary-color;
 		}
+	}
+}
+//footer
+.footer {
+	color: $pure-white;
+	background-color: $dark;
+	overflow: hidden;
+	.wrapper /*odnosimy się tylko do wrapera wewnątrz klasy footer tutaj*/ {
+		padding: 6em 2em 2em;
+	}
+
+	&__box {
+		font-size: 1.4rem;
+	}
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+	&__box-social {
+		margin: 2em 0em 1em;
+		background-color: greenyellow;
+	}
+	&__box-link {
+		padding: 0em 0.3em;
+		font-size: 3.6rem;
+		color: $pure-white;
+		text-decoration: none;
+		transition: color 0.3s;
+		color: $light-white;
+		&:nth-child(1) {
+			padding-left: 0;
+		}
+	}
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
 	}
 }
 // media
@@ -546,6 +586,35 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__box-desktop {
+			display: block;
+		}
+		&__box {
+			margin: 2em;
+			width: 25%;
+			&:nth-child(1) {
+				width: 50%;
+			}
+		}
+		&__box-title {
+			font-size: 2.4rem;
+		}
+		&__box-list {
+			list-style: none;
+			&-item {
+				margin-bottom: 1em;
+				a {
+					color: $light-white;
+					text-decoration: none;
+				}
+			}
 		}
 	}
 }
