@@ -19,7 +19,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	// overflow: hidden;/*body nie może mieć oveflow:hidden, bo nie będzie możlwe przewijanie*/
 	color: #fff;
-	background: $dark;
+	background: $light-white;
 	font-size: 1.6rem;
 }
 // navigation
@@ -28,11 +28,13 @@ body {
 	top: 20px;
 	right: 20px;
 	padding: 1em;
-	background: none;
+	background-color: rgb(178, 178, 186);
 	border: 1px solid transparent;
+	border-radius: 8px;
 	cursor: pointer;
 	z-index: 190;
 	&:focus {
+		/*focus stosujemy przy poruszaniu się tabulacją*/
 		outline: none;
 		border: 1px solid rgba(255, 255, 255, 0.5);
 		border-radius: 8px;
@@ -58,6 +60,7 @@ body {
 		&::after {
 			top: 13px;
 			width: 60%;
+			transition-delay: 0.15s;
 		}
 		&::before {
 			top: 27px;
@@ -68,15 +71,15 @@ body {
 }
 .nav {
 	position: fixed;
-	top: 0;
+	top: 0%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	width: 100%;
+	width: 100vw;
 	transform: translateX(100%);
 	transition: 0.5s cubic-bezier(0.65, 0.05, 0.036, 1);
-	background-color: red;
+	background-image: $blue-gradient-solid;
 	z-index: 100;
 	&--active {
 		transform: translateX(0);
@@ -89,26 +92,28 @@ body {
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
+		// background-color: red;
 		&::before {
+			/*to te paseczki z boku, które się pojawiają*/
 			position: absolute;
-			top: 0;
-			left: 0;
-			width: 3px;
-			height: 100%;
-			transform: scaleY(0);
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 2%;
+			transform: scaleX(0);
 			background-color: $pure-white;
 			transition: transform 0.3s;
-			transform-origin: top;
+			transform-origin: bottom;
 			content: '';
 		}
 		&:hover::before {
-			transform: scaleY(1);
+			transform: scaleX(1);
 		}
 	}
 }
 @keyframes navItemsAnimation {
 	from {
-		transform: translateX(200%);
+		transform: translateX(-200%);
 	}
 	to {
 		transform: translateX(0);
@@ -117,10 +122,16 @@ body {
 .nav-items-animation {
 	animation: navItemsAnimation 1.8s both;
 }
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	/*wprowadzamy tę klasę, żeby burger menu zmieniło się na czarny kolor w chwili, gdy tło jest białe*/
+	background-color: $dark;
+}
 // header
 .header {
 	position: relative;
-	display: flex;
+	display: flex; /*flez ma wpływ na elementy w dzieciach*/
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -131,7 +142,7 @@ body {
 	@include heroImages(
 		'../img/small_palms.jpg'
 	); /*pokazujemy co to za zmienna, używamy cudzysłowia*/
-	background-attachment: scroll;
+	background-attachment: scroll; /*przyczepia obraz z backround-image do tła headera*/
 	&__heading {
 		font-family: 'Dancing Script', cursive;
 		font-size: 4.8rem;
@@ -147,12 +158,12 @@ body {
 		border: none;
 		border-radius: 8px;
 		color: $dark;
-		text-decoration: none; /*znika podkreślenie*/
+		text-decoration: none; /*znika podkreślenie typowe dla tagu*/
 		text-transform: uppercase;
 		font-size: 1.4rem;
 		font-weight: bold;
 		cursor: pointer;
-		&::before {
+		&::after {
 			background-color: $light-white;
 		}
 	}
@@ -162,11 +173,13 @@ body {
 .dreams {
 	&__box {
 		display: flex;
-		flex-direction: column;
-		margin: 2em 0;
+		flex-direction: column; /*ale to później zostaje zmienione na row w mediach*/
+		// margin: 2em 0;
+		// background-color: red;
 	}
 	&__img {
 		width: 100%;
+		height: 100%;
 		margin-bottom: 1em;
 	}
 	&__title {
@@ -183,6 +196,7 @@ body {
 	padding: 10em 2em;
 	@include heroImages('../img/polynesia_small.jpg');
 	overflow: hidden;
+	text-align: center;
 	&__title {
 		margin-bottom: 0.5em;
 		font-family: 'Dancing Script', cursive;
@@ -206,11 +220,27 @@ body {
 		&:hover {
 			/*zwróć uwagę na sytuację, gdy hover odziałuje na więcej niż 2 klasy, wtedy należy nie wpisywać po spacji nazwy klasy, tylko otworzyć nawias i wpisać tu wszystkie klasy, na które odziałuje hover*/
 			/*Robienie flipa poniżej:*/
-			.islands__card-img {
+			.islands__card-img1 {
 				transform: rotateY(-180deg);
 				opacity: 0;
 			}
-			.islands__card-info {
+			.islands__card-info1 {
+				transform: rotateY(0deg);
+				opacity: 1;
+			}
+			.islands__card-img2 {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.islands__card-info2 {
+				transform: rotateY(0);
+				opacity: 1;
+			}
+			.islands__card-img3 {
+				transform: rotateY(-180deg);
+				opacity: 0;
+			}
+			.islands__card-info3 {
 				transform: rotateY(0);
 				opacity: 1;
 			}
@@ -224,6 +254,7 @@ body {
 			transition: transform 1s, opacity 1s;
 			&--first {
 				background-image: $light-blue-gradient, url('../img/islands1.jpg');
+				background-size: cover;
 				background-attachment: fixed;
 			}
 			&--second {
@@ -365,7 +396,7 @@ body {
 	}
 }
 .reviews {
-	background-color: grey;
+	background-color: $light-white;
 	&__box {
 		position: relative;
 		margin: 2em;
@@ -492,18 +523,18 @@ body {
 			justify-content: space-between;
 
 			&-text {
-				width: 55%;
-				border: 3px salmon solid;
+				width: 35%;
+				text-align: center;
+				color: $main-color;
 				&--right {
 					/*uwaga na taki zapis bo w CSS to nie jest dziecko*/
-					text-align: right;
-					background-color: green;
+					text-align: center;
+					// background-color: green;
 				}
 			}
 
 			&-img {
-				width: 40%;
-				border: 3px rgb(85, 140, 179) dotted;
+				width: 65%;
 
 				&--right {
 					order: 1;
@@ -514,7 +545,7 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
-			border: 4px white solid;
+			// border: 4px white solid;
 		}
 	}
 	.offers {
@@ -578,14 +609,14 @@ body {
 	}
 	.islands {
 		&__cards {
-			display: flex;
+			display: flex; /*oddziałuje na dzieci*/
 			justify-content: center;
-			flex-wrap: wrap; /*to daje możliwość, że elementy będą przenosozne do kolejnej linii, jeśli zajdzie taka potrzeba*/
-			background-color: greenyellow;
+			flex-wrap: wrap; /*to daje możliwość, że elementy będą przenosozne do kolejnej linii, jeśli zajdzie taka potrzeba - spójrz na szerokość ustaloną na &_card - tam jest narzucona 45% rodzica, więc w tym breakpoincie nie zmieszczą sie 3 obok siebie*/
+			// background-color: greenyellow;
 		}
 		&__card {
 			margin: 1em;
-			width: 45%;
+			width: 45%; /*musisz włączyć flex-wrap: wrap*/
 		}
 	}
 	.footer {
@@ -676,7 +707,7 @@ body {
 @media (min-width: 1100px) {
 	.islands {
 		&__cards {
-			flex-wrap: nowrap;
+			flex-wrap: nowrap; /*szerokość założyliśmy na 45% w poprzednim breakpoincie, tylko należy pamiętać, że wtedy musimy też włączyć funkcję flex-wrap:wrap; kiedy wyłączamy tę funkcję komendą "nowrap" zapis width: 45% nie zadziała*/
 		}
 		// &__card {
 		// width: 50%;

@@ -31,12 +31,14 @@
             <a href="#contact" class="nav__item">Kontakt</a>
         </div>
     </nav>
+    <!--header-->
     <header class="header section">
         <h1 class="header__heading">Tropical Paradise</h1>
         <p class="header__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         <a href="#offers" class="header__btn btn-special-animation">Poznaj ofertę</a>
         <div class="white-block white-block-left"></div>
     </header>
+    <!--main-->
     <main class="main">
         <section class="dreams section-padding section white-section">
             <div class="wrapper">
@@ -78,11 +80,11 @@
             <div class="wrapper">
                 <h2 class="islands__section-heading">Polecane Wyspy</h2>
                 <div class="islands__cards">
-                    <!--FIRST:-->
+                    <!--first:-->
                     <div class="islands__card" onclick="void(0)">
                         <!--wprowadzamy onlick="void(0) ze względu na fakt, że w urządzeniach moblinych ciężko wywołać hovera,a  po wpisaniu onclick="void(0)" i tapnięciu na element będzie się ona zachowywał jak po hoverze"-->
 
-                        <div class="islands__card-img islands__card-img--first">
+                        <div class="islands__card-img islands__card-img1 islands__card-img--first">
                             <!--modifier "islands__card-img--first" będzie stylowany w BEM jak dziecko, mimo że dzieckiem nie jest-->
                             <h3 class="islands__card-img-title">Fiji wyspa marzeń</h3>
                             <!--odziwo nie ma klasy osobnej .islands__card-text-->
@@ -90,7 +92,8 @@
                                 informacji</p>
                         </div>
 
-                        <div class="islands__card-info"> <!--to będzie sie pojawiało na stronie odwrotnej karty-->
+                        <div class="islands__card-info islands__card-info1">
+                            <!--to będzie sie pojawiało na stronie odwrotnej karty-->
                             <h3 class="islands__card-info-title">Fiji wyspa marzeń</h3>
                             <ul class="islands__card-info-list"> <!--u góry w podobnym miejscu mieliśmy p-->
                                 <li class="islands__card-info-list-item">Piękne obszary</li>
@@ -105,7 +108,7 @@
                     <!--second:-->
                     <div class="islands__card" onclick="void(0)">
 
-                        <div class="islands__card-img islands__card-img--second">
+                        <div class="islands__card-img islands__card-img2 islands__card-img--second">
                             <!--modifier "islands__card-img--first" będzie stylowany w BEM jak dziecko, mimo że dzieckiem nie jest-->
                             <h3 class="islands__card-img-title">Wyspa Cooka</h3>
                             <!--odziwo nie ma klasy osobnej .islands__card-text-->
@@ -113,7 +116,7 @@
                                 informacji</p>
                         </div>
 
-                        <div class="islands__card-info">
+                        <div class="islands__card-info islands__card-info2">
                             <h3 class="islands__card-info-title">Wyspa Cooka</h3>
                             <ul class="islands__card-info-list">
                                 <li class="islands__card-info-list-item">Piękne obszary</li>
@@ -129,7 +132,7 @@
                     <!--third:-->
                     <div class="islands__card" onclick="void(0)">
 
-                        <div class="islands__card-img islands__card-img--third">
+                        <div class="islands__card-img islands__card-img3 islands__card-img--third">
                             <!--modifier "islands__card-img--first" będzie stylowany w BEM jak dziecko, mimo że dzieckiem nie jest-->
                             <h3 class="islands__card-img-title">Madagaskar wyspa szczęścia</h3>
                             <!--odziwo nie ma klasy osobnej .islands__card-text-->
@@ -137,7 +140,7 @@
                                 informacji</p>
                         </div>
 
-                        <div class="islands__card-info">
+                        <div class="islands__card-info islands__card-info3">
                             <h3 class="islands__card-info-title">Madagaskar wyspa szczęścia</h3>
                             <ul class="islands__card-info-list">
                                 <li class="islands__card-info-list-item">Piękne obszary</li>
@@ -322,6 +325,7 @@
         <hr>
         <p class="footer__bottom-text">&copy;<span class="footer__year"></span>Tropical Paradise</p>
     </footer>
+  
 
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

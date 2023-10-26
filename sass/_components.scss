@@ -2,17 +2,17 @@
 	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
-	background-color: orange;
+	// background-color: orange;
 }
 .white-block {
 	position: absolute;
 	height: 40px;
 	width: 60%;
-	background-color: $pure-white;
+	background-color: $light-white;
 
 	&-left {
 		/*bo & =".white-block*/
-		bottom: 0;
+		bottom: 0%;
 		left: -50px;
 		transform: skew(45deg); /*pochylenie w lewo*/
 	}
@@ -27,10 +27,10 @@
 	transition: background-color 0.3s;
 	overflow: hidden;
 	z-index: 0;
-	&::before {
+	&::after {
 		display: block; /*z natury to element liniowy*/
 		content: ''; /*nie zapominaj o tym*/
-		position: absolute; /*dla tej pseudoklasy rodzicem jest .btn-special-animation*/
+		position: absolute; /*dla tej pseudoklasy, czyli ::before rodzicem jest .btn-special-animation*/
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -40,16 +40,20 @@
 		transition: transform 0.3s;
 		z-index: -1; /*żeby nie przesłaniał napisu*/
 	}
-	&:hover::before {
+	&:hover::after {
 		/* jak najedziesz na .btn-special-animation, który kryje się pod znakiem "&", to będzie reakcja na ::before*/
-		transform: scaleX(1); /*czyli elment się pojawi*/
+		transform: scaleX(0.7); /*czyli elment się pojawi*/
 		transform-origin: left;
 	}
 }
 .dreams__section-heading,
-.islands__section-heading, .offers__section-heading, .reviews__section-heading, .contact__section-heading {
+.islands__section-heading,
+.offers__section-heading,
+.reviews__section-heading,
+.contact__section-heading {
 	position: relative;
 	margin-bottom: 2em;
+	font-family: 'Times New Roman', Times, serif;
 	font-size: 3rem;
 	font-weight: 300;
 	text-transform: uppercase;

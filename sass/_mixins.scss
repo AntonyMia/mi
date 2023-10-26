@@ -18,8 +18,9 @@
 // 	transform: translateX(-50%);
 // }
 @mixin burgerBtn {
-	position: absolute;
-	right: 0;
+	position: absolute; /*w tym przypadku względem burger-btn__box*/
+	top: 0;
+	left: 0;
 	height: 3px;
 	content: '';
 	background-color: $pure-white;
