@@ -1,4 +1,3 @@
-@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -17,8 +16,8 @@ body {
 .wrapper {
   margin: 50px;
   display: grid;
-  grid-template-columns: 2fr 1fr; /*taki zapis oznacza na osi X będą 2 elementy w stosunku szerokości 2:1*/
-  grid-template-rows: 100px 100px 500px 100px; /*taki zapis oznacza na osi Y będą 4 rzędy o wysokości: pierwszy rząd 100px, drugi rząd 100px, trzeci rząd 500px, czwarty rząd 100px*/
+  grid-template-columns: [mleko] 1fr [kiwi] 1fr [kokos] 1fr [banan];
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .item {
@@ -27,36 +26,21 @@ body {
   justify-content: center;
   padding: 10px 20px;
   text-transform: uppercase;
+  border: 1px solid black;
 }
 
-nav {
-  background-color: tomato;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 1;
+.red {
+  background-color: red;
 }
 
-header {
-  background-color: gold;
-  grid-column: 1/3;
-  grid-row: 2/3;
+.blue {
+  background-color: blue;
 }
 
-main {
-  background-color: cornflowerblue;
-  grid-column: 1/2;
-  grid-row: 3/4;
+.green {
+  background-color: green;
 }
 
-aside {
-  background-color: slateblue;
-  grid-column: 2/3;
-  grid-row: 3/4;
-}
-
-footer {
-  background-color: greenyellow;
-  grid-column: 1/3;
-  grid-row: 4/5;
+.one {
+  grid-column: mleko/banan;
 }/*# sourceMappingURL=main.css.map */
