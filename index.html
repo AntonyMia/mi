@@ -11,9 +11,45 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@200;400;900&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/4a9660f801.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="./css/hambuger.css">
+    <!--tu linkujemy plik, który utworzyliśmy w sassie; zwróć uwagę, że kiedy byliśmy na stronie z hamburgerami - https://github.com/jonsuh/hamburgers, to tam jako krok pierwszy trzeba było zrobić "download", myśmy stworzyli plik o nazwie "hamburger.scss" i do niego wrzuciliśmy cały początek do słów -->
     <link rel="stylesheet" href="./css/main.css">
 </head>
+<header class="header">
+    <!--header składa się z : hamburgera, dwóch osobnych nawigacji, div.header__text, div.header__img,"a" mającą href #cards oraz dwóch img, które mają zawartość w postaci ikonek-->
+    <button class="hamburger hamburger--spin is-active" type="button">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+    <nav class="nav nav-mobile">
+        <!--dajemy dwie klasy nawigacji: nav.mobile - nav.desktop, bo generalnie stworzymy dwie osobne nawigacje, jedna dla urządzeń mobilnych, druga dla pozostałych-->
+        <a href="#invest">invest</a>
+        <a href="#plan">plan</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <nav class="nav nav-desktop"><!--nawigacja na desktopy-->
+        <a href="#invest">invest</a>
+        <a href="#plan">plan</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <div class="header__text">
+        <h1 class="company-name">Diamonds, Gold and Money</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos facere explicabo sint?</p>
+    </div>
+    <div class="header__img">
+        <div class="header__shadow"></div>
+    </div>
+    <a href="#cards">
+        <div class="header__arrow">
+            <img src="./img/icons/arrow-down.svg" alt="">
+            <!--zwróć uwagę na umieszczeniu ikonki w tagu img, tego jeszcze nie robiliśmy; zwróć uwagę, że w tym przypadku alt zostawiamy pusty, bo niewidomej osobie takie informacje nie są potrzebne, czytnik ekranu nie odczyta img z pustym altem-->
+        </div>
+    </a>
+    <img class="header__bg-icon-one" src="./img/icons/square.svg" alt="">
+    <!--SVG –Scalable Vector Graphics uniwersalny format dwuwymiarowej grafiki wektorowej- nie można mu nadać koloru, jeślibyśmy chcieli zmieniać kolor, to na stronie, z której wzięliśmy tę ikonkę, czyli https://feathericons.com/?query=square LUB poprzez wejście na plik svg w katalogu img/icons i wyszukaniu słowa "stroke" i znmienieniu koloru-->
+    <img class="header__bg-icon-two" src="./img/icons/square.svg" alt="">
+</header>
 
 <body>
     <footer class="footer">

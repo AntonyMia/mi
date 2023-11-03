@@ -20,6 +20,75 @@ body {
 	color: $white;
 	background-color: $dark;
 }
+h1.company-name {
+	margin-bottom: 0.5em;
+	font-size: 3rem;
+	font-family: 'Cinzel', serif;
+	color: gold;
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+//header
+.header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	&__text {
+		display: grid; /*tutaj mamy do czynienia z sytuacją, gdy ustawiamy sobie grid na rodzicu a dzieciom nadajemy jcc oraz aic. Powoduje to, że obszar zajęty przez text zostaje podzielony na część zajmowaną przez dzieci, czyli h1 oraz p. Treść ustawia się w centrum tych dwóch obszarów. W przypadku, gdybyśmy na rodzica, czyli na &__text dali display:flex, to rodzi nie zostałby podzielony na dwa obszary a dzieci ustawiłyby się na srodku tego jednego obszaru*/
+		justify-content: center; /*centrowanie jak we flexie*/
+		align-items: center;
+		grid-row: 2 / 3;
+		grid-column: 1 / 3;
+		padding: 2em;
+		// background-color: aqua;
+		p {
+			font-weight: 200;
+		}
+	}
+	&__img {
+		position: relative;
+		grid-row: 1/2;
+		grid-column: 1 / 3;
+		width: 100%;
+		height: 100%;
+		background-image: url('../img/header_small.jpg');
+		background-size: cover; /*żeby zdjęcie było rozciągnięte*/
+		background-position: center;
+		filter: sepia();
+	}
+	&__shadow {
+		position: absolute;
+		width: 100%; /*względem rodzica, czyli &__img*, tak, aby zasłaniał cały element*/
+		height: 100%;
+		background-color: rgb(0, 0, 0, 0.3);
+	}
+	&__arrow {
+		display: none;
+	}
+	&__bg-icon-one,
+	&__bg-icon-two {
+		position: absolute;
+		opacity: 0.05;
+		z-index: -5; /*żeby ikona była pod tekstem, nie zasłaniała go*/
+		// background-color: orange;
+	}
+	&__bg-icon-two {
+		display: none; /*żeby jej nie widać na urządzeniach mobilnych*/
+	}
+	&__bg-icon-one {
+		bottom: 0.5em;
+		right: -3em;
+		width: 50%;
+		animation: rotate-right 55s infinite linear; /*animacja powtarzająca się w nieskończoność, linear-  czyli z jednakowa prędkością*/
+	}
+}
+
 @import './small';
 @import './medium';
 @import './large';
