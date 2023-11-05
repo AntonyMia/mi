@@ -1,4 +1,31 @@
 @charset "UTF-8";
+@keyframes pulse {
+  /*zapamiętaj koniecznie ten efekt pulsowania*/
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+@keyframes rotate-right {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-left {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
 *,
 *::after,
 *::before {
@@ -41,7 +68,6 @@ h1.company-name {
   height: 100vh;
   position: relative;
   overflow: hidden;
-  background-color: green;
 }
 .header__text {
   display: grid; /*tutaj mamy do czynienia z sytuacją, gdy ustawiamy sobie grid na rodzicu a dzieciom nadajemy jcc oraz aic. Powoduje to, że obszar zajęty przez text zostaje podzielony na część zajmowaną przez dzieci, czyli h1 oraz p. Treść ustawia się w centrum tych dwóch obszarów. W przypadku, gdybyśmy na rodzica, czyli na &__text dali display:flex, to rodzi nie zostałby podzielony na dwa obszary a dzieci ustawiłyby się na srodku tego jednego obszaru*/
@@ -75,7 +101,7 @@ h1.company-name {
   display: none;
 }
 .header__bg-icon-one, .header__bg-icon-two {
-  position: absolute;
+  position: absolute; /*to ważna informacja*/
   opacity: 0.05;
   z-index: -5; /*żeby ikona była pod tekstem, nie zasłaniała go*/
 }
@@ -96,9 +122,6 @@ h1.company-name {
   z-index: 700;
 }
 .header .hamburger-inner, .header .hamburger-inner::after, .header .hamburger-inner::before {
-  background-color: #fff;
-}
-.header .nav {
   background-color: #fff;
 }
 .header .nav-desktop {
@@ -136,29 +159,14 @@ h1.company-name {
 .header .nav__link:hover {
   color: gold;
 }
-.header .nav__link::before {
-  position: absolute; /*bo to dziecko linku*/
-  top: 0;
-  left: 0;
-  content: ""; /*nie zapominaj*/
-  width: 100%;
-  height: 100%;
-  border: 1px solid gold;
-  opacity: 0;
-}
-.header .nav__link:hover::before {
-  /*PROBLEM bo napisałem samo &:hover i domyślnie myślałem, że skoro jest w nawiasach ::before, to będzie na niego oddziaływał, ale tak nie jest, trzeba dopisywać ::before*/
-  animation: pulse 1s;
-}
 
 @media (min-width: 992px) {
   .header {
-    grid-template-rows: auto repeat(2, 1fr); /*1 rzad zajmie tyle przestrzeni, ile jego treść*/
+    grid-template-rows: auto repeat(2, 1fr); /*to komenda utwórz 3 rzędy, z czego  1. rzad zajmie tyle przestrzeni, ile jego treść ten fragment jest nam potrzebny w momencie, gdy umieścimy tutaj nawigację, to jest linka 57 bieżącego pliku, bez komendy auto nawigacja by się rozlała po stronie*/
   }
   .header__text {
     grid-row: 2/4;
     grid-column: 1/2;
-    background-color: orange;
   }
   .header__text p {
     font-size: 1.8rem;
@@ -190,5 +198,50 @@ h1.company-name {
   }
   .header__arrow-icon {
     width: 50px;
+  }
+  .header__bg-icon-one {
+    /*uwaga: taki efekt delikatnej figury geometrycznej w tle uzyskaliśmy w main poprzez danie na ten element position absolute, opacity: 0.05, z-index na -5*/
+    /*trzeba się dobrze przypatrzeć, ale w tle pojawia się taki kwadrat*/
+    left: 6em;
+    bottom: 8em;
+    width: 20%;
+    z-index: 40;
+  }
+  .header__bg-icon-two {
+    display: block;
+    top: 10em;
+    bottom: 35%;
+    width: 10%;
+    animation: rotate-left 55s infinite linear;
+  }
+  .header .nav {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /*tworzy kreskę pod nawigacją*/
+  }
+  .header .nav-desktop {
+    display: block;
+  }
+  .header .nav__link {
+    color: #fff;
+  }
+  .header .nav__link::before {
+    /*treść przeniesiona do large*/
+    position: absolute; /*bo to dziecko linku*/
+    top: 0;
+    left: 0;
+    content: ""; /*nie zapominaj*/
+    width: 100%;
+    height: 100%;
+    border: 1px solid gold;
+    opacity: 0;
+  }
+  .header .nav__link:hover::before {
+    /*PROBLEM bo napisałem samo &:hover i domyślnie myślałem, że skoro jest w nawiasach ::before, to będzie na niego oddziaływał, ale tak nie jest, trzeba dopisywać ::before*/
+    animation: pulse 1s;
+  }
+  .header .hamburger {
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

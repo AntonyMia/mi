@@ -1,10 +1,10 @@
 @media (min-width: 992px) {
 	.header {
-		grid-template-rows: auto repeat(2, 1fr); /*1 rzad zajmie tyle przestrzeni, ile jego treść*/
+		grid-template-rows: auto repeat(2, 1fr); /*to komenda utwórz 3 rzędy, z czego  1. rzad zajmie tyle przestrzeni, ile jego treść ten fragment jest nam potrzebny w momencie, gdy umieścimy tutaj nawigację, to jest linka 57 bieżącego pliku, bez komendy auto nawigacja by się rozlała po stronie*/
 		&__text {
 			grid-row: 2/4;
 			grid-column: 1/2;
-			background-color: orange;
+			// background-color: orange;
 			p {
 				font-size: 1.8rem;
 			}
@@ -37,6 +37,54 @@
 		&__arrow-icon {
 			width: 50px;
 			// background-color: red;
+		}
+		&__bg-icon-one {
+			/*uwaga: taki efekt delikatnej figury geometrycznej w tle uzyskaliśmy w main poprzez danie na ten element position absolute, opacity: 0.05, z-index na -5*/
+			/*trzeba się dobrze przypatrzeć, ale w tle pojawia się taki kwadrat*/
+			left: 6em;
+			bottom: 8em;
+			width: 20%;
+			z-index: 40;
+			// background-color: red;
+		}
+		&__bg-icon-two {
+			display: block;
+			top: 10em;
+			bottom: 35%;
+			width: 10%;
+			animation: rotate-left 55s infinite linear;
+		}
+		.nav {
+			grid-column: 1/2;
+			grid-row: 1/2;
+			padding: 1em;
+			// background-color: red;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.3); /*tworzy kreskę pod nawigacją*/
+			&-desktop {
+				display: block;
+			}
+			&__link {
+				color: $white;
+				&::before {
+					/*treść przeniesiona do large*/
+					position: absolute; /*bo to dziecko linku*/
+					top: 0;
+					left: 0;
+					content: ''; /*nie zapominaj*/
+					width: 100%;
+					height: 100%;
+					border: 1px solid gold;
+					opacity: 0;
+					// background-color: red;
+				}
+				&:hover::before {
+					/*PROBLEM bo napisałem samo &:hover i domyślnie myślałem, że skoro jest w nawiasach ::before, to będzie na niego oddziaływał, ale tak nie jest, trzeba dopisywać ::before*/
+					animation: pulse 1s;
+				}
+			}
+		}
+		.hamburger {
+			display: none;
 		}
 	}
 }
