@@ -1,0 +1,42 @@
+@media (min-width: 992px) {
+	.header {
+		grid-template-rows: auto repeat(2, 1fr); /*1 rzad zajmie tyle przestrzeni, ile jego treść*/
+		&__text {
+			grid-row: 2/4;
+			grid-column: 1/2;
+			background-color: orange;
+			p {
+				font-size: 1.8rem;
+			}
+		}
+		&__img {
+			grid-row: 1/4;
+			grid-column: 2/3;
+		}
+		&__arrow {
+			display: block;
+			position: absolute;
+			left: 48%;
+			bottom: 3em;
+			padding: 2em;
+			transform: translateX(-50%);
+			border: 1px solid $white;
+			border-radius: 50%;
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: ''; /*nie zapominaj o tym*/
+				width: 100%;
+				height: 100%;
+				border: 1px solid $white;
+				border-radius: 50%;
+				animation: pulse 2s infinite;
+			}
+		}
+		&__arrow-icon {
+			width: 50px;
+			// background-color: red;
+		}
+	}
+}

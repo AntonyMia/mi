@@ -39,6 +39,7 @@ h1.company-name {
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
+	background-color: green;
 	&__text {
 		display: grid; /*tutaj mamy do czynienia z sytuacją, gdy ustawiamy sobie grid na rodzicu a dzieciom nadajemy jcc oraz aic. Powoduje to, że obszar zajęty przez text zostaje podzielony na część zajmowaną przez dzieci, czyli h1 oraz p. Treść ustawia się w centrum tych dwóch obszarów. W przypadku, gdybyśmy na rodzica, czyli na &__text dali display:flex, to rodzi nie zostałby podzielony na dwa obszary a dzieci ustawiłyby się na srodku tego jednego obszaru*/
 		justify-content: center; /*centrowanie jak we flexie*/
@@ -84,8 +85,77 @@ h1.company-name {
 	&__bg-icon-one {
 		bottom: 0.5em;
 		right: -3em;
-		width: 50%;
+		width: 30%;
 		animation: rotate-right 55s infinite linear; /*animacja powtarzająca się w nieskończoność, linear-  czyli z jednakowa prędkością*/
+	}
+	.hamburger {
+		position: absolute;
+		top: 3em;
+		left: 1em;
+		transform: translateY(-50%);
+		z-index: 700;
+		// background-color: orange;
+		&-inner, /*inner odpowiada za kreski poziome hamburgera*/
+		&-inner::after,
+		&-inner::before {
+			background-color: $white;
+		}
+	}
+	.nav {
+		&-desktop {
+			display: none;
+		}
+		&-mobile {
+			position: absolute; /*top, bottom, right, left na 0, zeby rozciagnąć na cały ekran*/
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex; /*żeby wypozycjonować dzieci, tutaj, żeby zobaczyć jak wygląda cała nawigacja rozciągnięta, daj kolor tła na np. pomarańczowy i daj wysoki z-index*/
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			transform: translateX(
+				-102%
+			); /* nie 100% bo sie z boku pojawiał biały pasek*/
+			transition: transform 0.3s;
+			z-index: 2000;
+			&--active {
+				transform: translateX(0%);
+			}
+		}
+		background-color: $white;
+		&__link {
+			position: relative;
+			display: inline-block;
+			margin: 0.5em;
+			padding: 0.5em;
+			text-decoration: none;
+			font-size: 2.3rem;
+			color: $darker;
+			text-transform: uppercase;
+			transition: color 0.3s;
+			cursor: pointer;
+			// background-color: red;
+			&:hover {
+				color: gold;
+			}
+			&::before {
+				position: absolute; /*bo to dziecko linku*/
+				top: 0;
+				left: 0;
+				content: ''; /*nie zapominaj*/
+				width: 100%;
+				height: 100%;
+				border: 1px solid gold;
+				opacity: 0;
+				// background-color: red;
+			}
+			&:hover::before {
+				/*PROBLEM bo napisałem samo &:hover i domyślnie myślałem, że skoro jest w nawiasach ::before, to będzie na niego oddziaływał, ale tak nie jest, trzeba dopisywać ::before*/
+				animation: pulse 1s;
+			}
+		}
 	}
 }
 
