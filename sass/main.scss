@@ -122,6 +122,8 @@ h1.company-name {
 			z-index: 2000;
 			&--active {
 				transform: translateX(0%);
+				background-color: $white;
+				z-index: 30;
 			}
 		}
 		// background-color: $white;
@@ -158,7 +160,35 @@ h1.company-name {
 		}
 	}
 }
+//main
+//cards
+.main {
+	.cards {
+		background-color: $darker;
+		overflow: hidden;
 
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(9, 1fr);
+			gap: 2em;
+			padding: 6em;
+			background-color: green;
+		}
+		&__card {
+			/*są trzy karty*/
+			position: relative; /*wzgledniem niem będziemy pozycjonować img, h3 oraz p*/
+			display: grid; /*ponieważ karta ma 3 dzieci, i nadaliśmy jej grid a nie napisaliśmy ile ma mieć row i columns, na chwilę obecną została stworzona 1 kolumna na treść i 3 wiersze na każde dziecko po jednym*/
+			justify-items: center;
+			// align-items: center;
+			padding: 3em;
+			text-align: center;
+			border: 1px solid transparent; /*dodajemy transparent, żeby po dodaniu hovera te elementy nie skakały, bo niewidoczny border zawsze trzyma elementy na swoim miejscu*/
+			border-radius: 8px;
+			background-color: $dark;
+			transition: background-color .3s;
+		}
+	}
+}
 @import './small';
 @import './medium';
 @import './large';

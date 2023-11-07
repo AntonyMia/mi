@@ -143,6 +143,8 @@ h1.company-name {
 }
 .header .nav-mobile--active {
   transform: translateX(0%);
+  background-color: #fff;
+  z-index: 30;
 }
 .header .nav__link {
   position: relative;
@@ -158,6 +160,30 @@ h1.company-name {
 }
 .header .nav__link:hover {
   color: gold;
+}
+
+.main .cards {
+  background-color: #191919;
+  overflow: hidden;
+}
+.main .cards__box {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2em;
+  padding: 6em;
+  background-color: green;
+}
+.main .cards__card {
+  /*są trzy karty*/
+  position: relative; /*wzgledniem niem będziemy pozycjonować img, h3 oraz p*/
+  display: grid; /*ponieważ karta ma 3 dzieci, i nadaliśmy jej grid a nie napisaliśmy ile ma mieć row i columns, na chwilę obecną została stworzona 1 kolumna na treść i 3 wiersze na każde dziecko po jednym*/
+  justify-items: center;
+  padding: 3em;
+  text-align: center;
+  border: 1px solid transparent; /*dodajemy transparent, żeby po dodaniu hovera te elementy nie skakały, bo niewidoczny border zawsze trzyma elementy na swoim miejscu*/
+  border-radius: 8px;
+  background-color: #232323;
+  transition: background-color 0.3s;
 }
 
 @media (min-width: 992px) {
