@@ -31,6 +31,29 @@ h1.company-name {
 	max-width: 1200px;
 	width: 100%;
 }
+.section-title {
+	/*z sekcji info*/
+	position: relative; /*względem tego elementu będziemy pozycjonować jego dziecko, czyli ::before*/
+	margin: 0 auto 2em; /*auto gwarantuje ustawienie tytułu na środku*/
+	width: fit-content; /*żeby dopasować szerokość do treści*/
+	font-size: 3.2rem;
+	color: gold;
+	font-weight: 200;
+	// background-color: red;
+	&::before {
+		position: absolute;
+		bottom: 0em;
+		left: 0;
+		width: 40px;
+		height: 2px;
+		background-color: $gold;
+		content: '';
+	}
+	span {
+		font-weight: 900;
+		// background-color: green;
+	}
+}
 //header
 .header {
 	display: grid;
@@ -169,7 +192,10 @@ h1.company-name {
 
 		&__box {
 			display: grid;
-			grid-template-columns: repeat(9, 1fr);/*liczba rzędów wynika z liczby dzieci - czyli 3*/
+			grid-template-columns: repeat(
+				9,
+				1fr
+			); /*liczba rzędów wynika z liczby dzieci - czyli 3*/
 			gap: 2em;
 			padding: 6em;
 			// background-color: green;
@@ -231,6 +257,39 @@ h1.company-name {
 		}
 	}
 }
+//info
+.info {
+	position: relative; /*względem tego rodzica będziemy pozycjonować kwadraciki i iksy z samego dołu sekcji*/
+	display: grid;
+	grid-template-areas: /*generalnie w tej sekcji mamy jedną kolumnę, stąd taki zapis*/
+		'title'
+		'box'
+		'box';
+	padding: 6em 2em;
+	&__title {
+		grid-area: title; /*tutaj nie ma cudzysłowu*/
+	}
+	&__boxes {
+		grid-area: box; /*tutaj nie ma cudzysłowu*/
+		// background-color: blue;
+	}
+	&__box-img {
+		width: 100%;
+		object-fit: contain;
+		filter: sepia();
+	}
+	&__box-title {
+		margin: 0.3em 0;
+		font-size: 2.6rem;
+		color: $gold;
+		font-weight: 200;
+		// background-color: yellow;
+	}
+	&__box-text {
+		
+	}
+}
+
 @import './small';
 @import './medium';
 @import './large';

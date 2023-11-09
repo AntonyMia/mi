@@ -61,6 +61,29 @@ h1.company-name {
   width: 100%;
 }
 
+.section-title {
+  /*z sekcji info*/
+  position: relative; /*względem tego elementu będziemy pozycjonować jego dziecko, czyli ::before*/
+  margin: 0 auto 2em; /*auto gwarantuje ustawienie tytułu na środku*/
+  width: -moz-fit-content;
+  width: fit-content; /*żeby dopasować szerokość do treści*/
+  font-size: 3.2rem;
+  color: gold;
+  font-weight: 200;
+}
+.section-title::before {
+  position: absolute;
+  bottom: 0em;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: #d6c78e;
+  content: "";
+}
+.section-title span {
+  font-weight: 900;
+}
+
 .header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -227,6 +250,30 @@ h1.company-name {
   background-color: violet;
 }
 
+.info {
+  position: relative; /*względem tego rodzica będziemy pozycjonować kwadraciki i iksy z samego dołu sekcji*/
+  display: grid;
+  grid-template-areas: "title" "box" "box";
+  padding: 6em 2em;
+}
+.info__title {
+  grid-area: title; /*tutaj nie ma cudzysłowu*/
+}
+.info__boxes {
+  grid-area: box; /*tutaj nie ma cudzysłowu*/
+}
+.info__box-img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  filter: sepia();
+}
+.info__box-title {
+  margin: 0.3em 0;
+  font-size: 2.6rem;
+  color: #d6c78e;
+  font-weight: 200;
+}
 @media (min-width: 768px) {
   .main .cards__box {
     padding: 10em 2em;
