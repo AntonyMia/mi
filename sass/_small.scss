@@ -1,2 +1,56 @@
 @media (min-width: 576px) {
+	.info {
+		grid-template-areas: /*przez wpisanie sobie poniższego układu, powstały nam 2 kolumny i 4 rzędy bez użycia grid-template areas i grid-template-rows, oczywiście w main zaznaczyliśmy, ze ta klasa ma display:grid*/
+			'title box'
+			'title box'
+			'title box';
+		padding: 10em 2em;
+
+		&__box {
+			display: grid;
+			justify-content: end; /*odnosi się do dzieci, czyli img, h3, p,p, oraz "a"*/
+			// background-color: blue;
+		}
+		&__title {
+			padding: 0 1em;
+			// background-color: yellow;
+		}
+		&__box-img,
+		&__box-text {
+			max-width: 550px;
+		}
+		&__bg-icon {
+			display: block;
+			position: absolute;
+			grid-area: title;
+			opacity: 0.05;
+			z-index: -5;
+			// background-color: red;
+			&--one {
+				top: 14%; /*jest włączona position absolute parę wierszy wyzej*/
+				width: 20%; /*względem szerokości rodzica*/
+				transform: rotate(15deg); /*taki będzie punkt wyjściowy do obrotów*/
+				animation: rotate-right 155s infinite linear;
+				// background-color: aqua;
+			}
+			&--two {
+				bottom: 10%;
+				left: 10%;
+				width: 40%;
+				animation: rotate-left 121s infinite linear;
+			}
+			&--three {
+				top: 26%;
+				left: 10%;
+				width: 50%;
+				animation: rotate-left 131s infinite linear;
+			}
+			&--four {
+				top: 55%;
+				left: -30%;
+				width: 75%;
+				animation: rotate-right 80s infinite linear;
+			}
+		}
+	}
 }
