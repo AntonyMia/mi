@@ -78,7 +78,7 @@
         </section>
         <!--SEKCJA INFO-->
         <div class="wrapper">
-            <!--budowanie kolejnej sekcji zaczynamy nietypowo, bo od wrappera- cała ta skecja będzie się znajdować we wraperze-->
+            <!--budowanie kolejnej sekcji zaczynamy nietypowo, bo od wrappera- cała ta sekcja będzie się znajdować we wraperze-->
             <section class="info" id="invest">
                 <!--nazwa klasy w sekcji różni się od id sekcji; klasa info składa się z dwóch zasadniczych elementów: info__title oraz info__boxa plus 4 ikon umieszczonych w img-->
 
@@ -126,9 +126,93 @@
                 <img src="./img/icons/x.svg" alt="" class="info__bg-icon info__bg-icon--three">
                 <img src="./img/icons/x.svg" alt="" class="info__bg-icon info__bg-icon--four">
             </section>
-
-
         </div>
+
+        <!--SEKCJA PLANS-->
+
+        <section class="plans" id="plan">
+            <h2 class="section-title">plan your <span>future</span></h2>
+            <div class="wrapper">
+                <!--wrapper wewnątrz sekcji, ze względu na to, żeby kolor sekcji rozciągał się na całym ekranie, my tutaj rozszerzyliśmy tego wrappera, bo domyślnie ma 1200px; tym razem to wrapper na dzieci: gołą h2 oraz trzy *plans__box-->
+
+                <!--plans__box one-->
+                <div class="plans__box">
+                    <img src="./img/icons/briefcase.svg" alt="" class="plans__item plans__item-icon">
+
+                    <div class="plans__item plans__item-name">
+                        <h3>#easyMoney</h3>
+                    </div>
+                    <div class="plans__item plans__item-money">
+                        <p><b>Contribution:</b></p>
+                        <p>250000$</p>
+                    </div>
+                    <div class="plans__item plans__item-term">
+                        <p><b>Term:</b></p>
+                        <p>2 years</p>
+                    </div>
+                    <div class="plans__item plans__item-profit">
+                        <p><b>Profit:</b></p>
+                        <p>-10%-20%</p>
+                    </div>
+                </div>
+                <!--plans__box two-->
+
+                <div class="plans__box">
+                    <img src="./img/icons/cast.svg" alt="" class="plans__item plans__item-icon">
+
+                    <div class="plans__item plans__item-name">
+                        <h3>#reliableStuff</h3>
+                    </div>
+                    <div class="plans__item plans__item-money">
+                        <p><b>Contribution:</b></p>
+                        <p>550000$</p>
+                    </div>
+                    <div class="plans__item plans__item-term">
+                        <p><b>Term:</b></p>
+                        <p>5 years</p>
+                    </div>
+                    <div class="plans__item plans__item-profit">
+                        <p><b>Profit:</b></p>
+                        <p>-30%-40%</p>
+                    </div>
+                </div>
+
+
+                <!--plans__box three-->
+                <div class="plans__box">
+                    <img src="./img/icons/film.svg" alt="" class="plans__item plans__item-icon">
+
+                    <div class="plans__item plans__item-name">
+                        <h3>#easyMoney</h3>
+                    </div>
+                    <div class="plans__item plans__item-money">
+                        <p><b>Contribution:</b></p>
+                        <p>250000$</p>
+                    </div>
+                    <div class="plans__item plans__item-term">
+                        <p><b>Term:</b></p>
+                        <p>5 years</p>
+                    </div>
+                    <div class="plans__item plans__item-profit">
+                        <p><b>Profit:</b></p>
+                        <p>-50%-70%</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--SEKCJA NEWSLETTER-->
+        <section class="newsletter">
+        <div class="wrapper newsletter__wrapper"> <!--uwaga: znowu wrapper w środku; wrapper składa się z 2 div: newsletter__text oraz newsletter__form-->
+                <div class="newsletter__text">
+                    <p>Sign up for newsletter...</p>
+                </div>
+                <div  class="newsletter__form"> <!--formularz w formie diva-->
+                    <input class="newsletter__input" type="text">
+                    <button class="newsletter__button">Subscribe</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <p class="footer__bottom-text">&copy; <span class="footer__year"></span>DG&M Corporation</p>

@@ -72,6 +72,7 @@ h1.company-name {
   font-weight: 200;
 }
 .section-title::before {
+  /*stąd efekt podkreślenia*/
   position: absolute;
   bottom: 0em;
   left: 0;
@@ -293,6 +294,68 @@ h1.company-name {
   display: none;
 }
 
+.plans {
+  padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji*/
+  background-color: #191919;
+}
+.plans__box {
+  margin: 1em 0;
+  padding: 2em 1em;
+  text-align: center;
+  border: 1px solid transparent; /*ze względu na to, że na hover będziemy wywoływać akcję, w której wywołamy sobie border, gdybyśmy nie wpisali tutaj border, obraz zacząłby się trząść*/
+  border-radius: 8px;
+  transition: all 2s;
+  background-color: #232323;
+  cursor: pointer; /*taki niby element klikalny, bo w zasadzie, każdy boż powinien być w środku tagu "a"*/
+}
+.plans__box:hover {
+  background-color: #191919;
+  border: 1px solid #d6c78e;
+}
+.plans__item {
+  padding: 1em 0;
+  font-size: 1.8rem;
+  color: #d6c78e;
+}
+.plans__item-icon {
+  width: 50px;
+}
+.plans__item-name {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
+.newsletter {
+  padding: 8em 2em; /*zwiększając padding, zwiększamy obszar zajmowany przez sekcję i powodujemy, że ona rośnie na wysokość, czyli padding odpowiada często za rozmiar sekcji góra/ dół*/
+  background-color: #A01C35;
+  text-align: center;
+}
+.newsletter__text {
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 4rem;
+  font-weight: 200;
+}
+.newsletter__input {
+  margin-bottom: 1em;
+  padding: 1em; /*przez co automatycznie rozrósł się cały input*/
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+.newsletter__button {
+  padding: 2em;
+  border: 1px solid #d6c78e;
+  background: none;
+  color: gold;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+.newsletter__button:hover {
+  background-color: #d6c78e;
+  color: #A01C35;
+}
+
 @media (min-width: 576px) {
   .info {
     grid-template-areas: "title box" "title box" "title box";
@@ -358,6 +421,23 @@ h1.company-name {
     grid-column: 7/10;
     grid-row: 1/2;
     background-color: rgb(47, 0, 128);
+  }
+  .main .plans {
+    padding: 8em 2em;
+  }
+  .main .plans__box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /*podział na 5 kolumn wynika z faktu, że &__box ma 5 dzieci, a celem jest, by każde dziecko pojawiło się obok siebie*/
+    gap: 2em;
+    align-items: center;
+  }
+  .main .plans__item {
+    margin: 0 1em;
+    z-index: 2;
+  }
+  .main .plans__item-name {
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 992px) {

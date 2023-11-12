@@ -30,6 +30,7 @@ h1.company-name {
 	margin: 0 auto;
 	max-width: 1200px;
 	width: 100%;
+	// background-color: green;
 }
 .section-title {
 	/*z sekcji info*/
@@ -41,6 +42,7 @@ h1.company-name {
 	font-weight: 200;
 	// background-color: red;
 	&::before {
+		/*stąd efekt podkreślenia*/
 		position: absolute;
 		bottom: 0em;
 		left: 0;
@@ -302,6 +304,69 @@ h1.company-name {
 	}
 	&__bg-icon {
 		display: none;
+	}
+}
+//plans
+.plans {
+	padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji*/
+	background-color: $darker;
+	&__box {
+		margin: 1em 0;
+		padding: 2em 1em;
+		text-align: center;
+		border: 1px solid transparent; /*ze względu na to, że na hover będziemy wywoływać akcję, w której wywołamy sobie border, gdybyśmy nie wpisali tutaj border, obraz zacząłby się trząść*/
+		border-radius: 8px;
+		transition: all 2s;
+		background-color: $dark;
+		cursor: pointer; /*taki niby element klikalny, bo w zasadzie, każdy boż powinien być w środku tagu "a"*/
+		&:hover {
+			background-color: $darker;
+			border: 1px solid $gold;
+		}
+	}
+	&__item {
+		padding: 1em 0;
+		// background-color: pink;
+		font-size: 1.8rem;
+		color: $gold;
+	}
+	&__item-icon {
+		width: 50px;
+	}
+	&__item-name {
+		margin-top: 0;
+		margin-bottom: 1.5em;
+	}
+}
+//newsletter
+.newsletter {
+	padding: 8em 2em; /*zwiększając padding, zwiększamy obszar zajmowany przez sekcję i powodujemy, że ona rośnie na wysokość, czyli padding odpowiada często za rozmiar sekcji góra/ dół*/
+	background-color: $red;
+	text-align: center;
+	&__text {
+		padding: 1em;
+		margin-bottom: 1em;
+		font-size: 4rem;
+		font-weight: 200;
+	}
+	&__input {
+		margin-bottom: 1em;
+		padding: 1em; /*przez co automatycznie rozrósł się cały input*/
+		width: 100%;
+		background-color: $white;
+		border: 1px solid transparent;
+	}
+	&__button {
+		padding: 2em;
+		border: 1px solid $gold;
+		background: none;
+		color: gold;
+		font-weight: bold;
+		transition: background-color 0.3s, color 0.3s;
+		&:hover {
+			background-color: $gold;
+			color: $red;
+		}
 	}
 }
 

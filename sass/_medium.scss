@@ -20,5 +20,27 @@
 				background-color: rgb(47, 0, 128);
 			}
 		}
+		.plans {
+			padding: 8em 2em;
+			&__box {
+				display: grid;
+				grid-template-columns: repeat(
+					5,
+					1fr
+				); /*podział na 5 kolumn wynika z faktu, że &__box ma 5 dzieci, a celem jest, by każde dziecko pojawiło się obok siebie*/
+				gap: 2em;
+				align-items: center;
+			}
+			&__item {
+				margin: 0 1em;
+				// background-color: red;
+				z-index: 2;
+			}
+			&__item-name {
+				margin-top: 0;
+				margin-bottom: 0;
+				// background-color: blue;
+			}
+		}
 	}
 }
