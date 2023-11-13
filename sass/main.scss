@@ -359,6 +359,7 @@ h1.company-name {
 	&__button {
 		padding: 2em;
 		border: 1px solid $gold;
+		border-radius: 8px;
 		background: none;
 		color: gold;
 		font-weight: bold;
@@ -369,7 +370,25 @@ h1.company-name {
 		}
 	}
 }
-
+//gallery
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	&__img {
+		height: 300px;
+		width: 100%;
+		object-fit: cover; /*obraz zostanie wypełniony, a nie zdeformowany, a nadmiarowa zawartość zostanie obcięta.*/
+		// background-color: red;
+		&:nth-child(odd) {
+			display: none;
+		}
+	}
+}
+.footer {
+	padding: 3em 1em;
+	border-top: 2px solid $darker;
+	text-align: center;
+}
 @import './small';
 @import './medium';
 @import './large';

@@ -28,7 +28,7 @@
 					5,
 					1fr
 				); /*podział na 5 kolumn wynika z faktu, że &__box ma 5 dzieci, a celem jest, by każde dziecko pojawiło się obok siebie*/
-				gap: 2em;
+				// gap: 2em;
 				align-items: center;
 			}
 			&__item {
@@ -40,6 +40,36 @@
 				margin-top: 0;
 				margin-bottom: 0;
 				// background-color: blue;
+			}
+		}
+		.newsletter {
+			.wrapper {
+				display: grid;
+				grid-template-columns: 1fr 1fr; /*taki zapis powoduje, że dwójka dzieci wrappera, czyli &__text oraz &__form zostana rozmieszczone w dwóch kolumnach*/
+				align-items: center;
+			}
+			&__text {
+				margin-bottom: 0;
+			}
+			&__form {
+				display: grid;
+				grid-template-columns: 3fr 1fr; /*to automatycznie układa dwójkę dzieci czyli newsletter__input oraz newsletter__button w dwóch kolumnach, w stosunku szerokości 3:1*/
+				gap: 20px;
+			}
+			&__button {
+				border-radius: 0;
+			}
+			&__input {
+				margin-bottom: 0;
+			}
+		}
+		.gallery {
+			grid-template-columns: repeat(4, 1fr);
+			&__img {
+				
+				&:nth-child(odd) {
+					display: block;
+				}
 			}
 		}
 	}
