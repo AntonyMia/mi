@@ -25,21 +25,25 @@
 			grid-column: 2/3;
 		}
 		&__arrow {
-			display: block;
+			display: block; /*bo na urządzenia monbilne było display: none*/
 			position: absolute;
 			left: 48%;
 			bottom: 3em;
-			padding: 2em;
+			padding: 2em; /*padding służy też okreslania wielkości elementu*/
 			transform: translateX(-50%);
 			border: 1px solid $white;
 			border-radius: 50%;
+			// animation: pulse 2s infinite;
 			&::before {
+				/*animacja jest na ::before, żeby strzałka nie znikała*/
 				position: absolute;
 				top: 0;
 				left: 0;
+				bottom: 0;
+				right: 0;
 				content: ''; /*nie zapominaj o tym*/
-				width: 100%;
-				height: 100%;
+				// width: 100%;
+				// height: 100%;
 				border: 1px solid $white;
 				border-radius: 50%;
 				animation: pulse 2s infinite;
@@ -59,7 +63,7 @@
 			// background-color: red;
 		}
 		&__bg-icon-two {
-			display: block;
+			display: block; /*żeby się pojawiło*/
 			top: 10em;
 			bottom: 35%;
 			width: 10%;

@@ -28,5 +28,15 @@ handleNav = () => {
 	} else {
 		footer.style.display = 'block';
 	}
+	/*zaproponowane przez kogoś w ostatnim odcinku*/
+	const disableScroll = () => {
+		navMobile.classList.toggle('active');
+		if (navMobile.classList.contains('active')) {
+			body.style.overflow = 'hidden';
+		} else {
+			body.style.overflow = 'auto';
+		}
+	};
+
 };
 navBtn.addEventListener('click', handleNav);

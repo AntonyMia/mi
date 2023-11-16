@@ -58,11 +58,12 @@ h1.company-name {
 }
 //header
 .header {
+	/*header za pomoacą grid jest podzielony na 4 części, z dzieci zabieramy: button oraz nav za pomocą position absolute*/
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	height: 100vh;
-	position: relative;
+	height: 100vh; /*w ten sposób budujemy wysokość headera*/
+	position: relative; /*żeby dzieci mogłby mieć absolute*/
 	overflow: hidden;
 	// background-color: green;
 	&__text {
@@ -78,13 +79,13 @@ h1.company-name {
 		}
 	}
 	&__img {
-		position: relative;
+		position: relative; /*po jego dziecko ma absolute*/
 		grid-row: 1/2;
 		grid-column: 1 / 3;
 		width: 100%;
 		height: 100%;
 		background-image: url('../img/header_small.jpg');
-		background-size: cover; /*żeby zdjęcie było rozciągnięte*/
+		background-size: cover; /*żeby zdjęcie było rozciągnięte, coś co przypomina object-fit:cover w przypadku elementów img*/
 		background-position: center;
 		filter: sepia();
 	}
@@ -110,10 +111,11 @@ h1.company-name {
 	&__bg-icon-one {
 		bottom: 0.5em;
 		right: -3em;
-		width: 30%;
+		height: 30%; /*tzreba dać jakiś wymiar: height lub width*/
 		animation: rotate-right 55s infinite linear; /*animacja powtarzająca się w nieskończoność, linear-  czyli z jednakowa prędkością*/
 	}
 	.hamburger {
+		/*mimo że zaimportowaliśmy ustawienia hamburgera poprzez link, to musimy go teraz ustawić na stronie*/
 		position: absolute;
 		top: 3em;
 		left: 1em;
@@ -190,30 +192,30 @@ h1.company-name {
 .main {
 	.cards {
 		background-color: $darker;
-		overflow: hidden; /*dajemy t ę wartość ze względu na animację, która będzie na befor do card - linijka 195, gdyby overlow nie bylo hidden, to przy małych rozdzielczościach ze względu na wartość transform: scale (1.2) mielibyśmy nieporządany efekt*/
+		overflow: hidden; /*dajemy tę wartość ze względu na animację, która będzie na before do card - linijka 195, gdyby overlow nie bylo hidden, to przy małych rozdzielczościach ze względu na wartość transform: scale (1.2) mielibyśmy nieporządany efekt*/
 
 		&__box {
 			display: grid;
 			grid-template-columns: repeat(
 				9,
 				1fr
-			); /*liczba rzędów wynika z liczby dzieci - czyli 3*/
+			); /*liczba rzędów nie jest podawana,  ale jest trójka dzieci: 3 *cars__card i powstają 3 rzędy*/
 			gap: 2em;
 			padding: 6em;
 			// background-color: green;
 		}
 		&__card {
-			/*są trzy karty*/
-			position: relative; /*wzgledniem niem będziemy pozycjonować img, h3 oraz p*/
-			display: grid; /*ponieważ karta ma 3 dzieci, i nadaliśmy jej grid a nie napisaliśmy ile ma mieć row i columns, na chwilę obecną została stworzona 1 kolumna na treść i 3 wiersze na każde dziecko po jednym*/
-			justify-items: center;
+			/*są trzy karty - ta sekcja na desktopie będzie miała mniejszą wysokość, za sprawą ułożenia trzech kart obok siebie*/
+			position: relative; /*wzgledniem rodzica będziemy pozycjonować before i tylko dlatego jest ta pozycja*/
+			display: grid; /*ponieważ karta ma 3 dzieci: img,h3 oraz p, i nadaliśmy jej grid a nie napisaliśmy ile ma mieć row i columns, na chwilę obecną została stworzona 1 kolumna na treść i 3 wiersze na każde dziecko po jednym, nie można tutaj zastąpić: display: flex, bo elementy ułożą sieobok siebie przy zapisie justify: center*/
+			justify-items: center; /*uwaga w grid nie używamy justify-content:center*/
 			// align-items: center;
 			padding: 3em;
 			text-align: center;
 			border: 1px solid transparent; /*dodajemy transparent, żeby po dodaniu hovera i w hoverze wprowadzeniu zmiany na borderze,  div z klasą cards__card nie skakały - hover będzie powodował tylko zmianę koloru hovera z transparent na złoty*/
 			border-radius: 8px;
 			background-color: $dark;
-			transition: background-color 0.3s, border 0.3s;
+			transition: background-color 0.3s, border 0.3s; /*zauważ przecinek w takim wyp.*/
 			z-index: 5; /*ze względu na animację na ::before, żeby rozchodzące się linie nie dawały nieporządanego efektu*/
 			&:hover {
 				background-color: $darker;
@@ -242,7 +244,8 @@ h1.company-name {
 				text-transform: uppercase;
 			}
 			&--one {
-				grid-column: 1/-1; /*jak zwykle na początku pracujemy na urządzeniach mobilnych, więc pod nie te wartości, potem na breakpointach pozmieniamy; pozycjonujemy na gridzie rodzica!!!*/
+				/*ta sama klasa co cards__card*/
+				grid-column: 1/-1; /*jak zwykle na początku pracujemy na urządzeniach mobilnych, więc pod nie te wartości, potem na breakpointach pozmieniamy; tu pozycjonujemy na siatce gridowej rodzica!!!*/
 				grid-row: 1/2;
 				background-color: red;
 			}
@@ -381,6 +384,69 @@ h1.company-name {
 		// background-color: red;
 		&:nth-child(odd) {
 			display: none;
+		}
+	}
+}
+.contact {
+	padding: 6em 2em; /*standardowo, tak, jak na innych sekcjach*/
+	&__form {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		&-btn {
+			grid-column: 1/3;
+			grid-row: 4/5;
+			padding: 1em;
+			min-width: 70px;
+			border: 1px solid $gold;
+			background: none;
+			font-weight: bold;
+			color: $gold;
+			cursor: pointer;
+			transition: background-color 0.3s color 0.3s;
+			&:hover,
+			&:focus {
+				outline: none;
+				background-color: $gold;
+				color: $dark;
+			}
+		}
+	}
+	&__form-box {
+		label {
+			display: block;
+			margin-bottom: 0.5em;
+			font-size: 2rem;
+		}
+		textarea {
+			height: 70%;
+			resize: vertical; /*zapobiega rozciaganiu się w szerz*/
+
+			// background-color: red;
+		}
+		input,
+		textarea {
+			padding: 1em 2em;
+			margin-bottom: 2em;
+			width: 100%;
+			color: $white;
+			background: none;
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			&:focus {
+				outline: none; /*żeby pozbyć się focusa*/
+				border: 1px solid $gold; /*żeby był ładny efekt podświetlenia*/
+			}
+		}
+		&:nth-child(1) {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+		}
+		&:nth-child(2) {
+			grid-column: 1/-1;
+			grid-row: 2/3;
+		}
+		&:nth-child(3) {
+			grid-column: 1/-1;
+			grid-row: 3/4;
 		}
 	}
 }

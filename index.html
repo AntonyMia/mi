@@ -12,15 +12,15 @@
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/4a9660f801.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/hambuger.css">
-    <!--tu linkujemy plik, który utworzyliśmy w sassie; zwróć uwagę, że kiedy byliśmy na stronie z hamburgerami - https://github.com/jonsuh/hamburgers, to tam jako krok pierwszy trzeba było zrobić "download", myśmy stworzyli plik o nazwie "hamburger.scss" i do niego wrzuciliśmy cały początek do słów -->
+    <!--tu linkujemy plik, który utworzyliśmy w sassie ze stylami hamburgera-  czyli nie przez import, ale przez link; zwróć uwagę, że kiedy byliśmy na stronie z hamburgerami - https://github.com/jonsuh/hamburgers, to tam jako krok pierwszy trzeba było zrobić "download", myśmy stworzyli plik o nazwie "hamburger.scss" i do niego wrzuciliśmy linijki 1-56 -->
     <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <header class="header">
         <!--header składa się z : hamburgera, dwóch osobnych nawigacji, div.header__text, div.header__img,"a" mającą href #cards oraz dwóch img, które mają zawartość w postaci ikonek- UWAGA: posiadanie wielu dzieci przez header ułatwia ich rozmieszczenie na stronie przez position absolute-->
-        <button class="hamburger hamburger--spin" type="button"> <!--bez klasy is-active, czyli kroku czwartego ze strony
-        https://github.com/jonsuh/hamburgers -->
+        <button class="hamburger hamburger--spin" type="button">
+            <!--tę strukturę bierzemy bezpośrednio ze strony https://github.com/jonsuh/hamburgers, dodając klasę "hamburger--spin", nie dodając klasy "is-active", czyli kroku czwartego-->
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
@@ -41,10 +41,12 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos facere explicabo sint?</p>
         </div>
         <div class="header__img">
+            <!--uwaga: to nie jest img tylko div z klasą "header__img", więc tutaj obrazek pojawia się za pomocą tworzenia tła, czyli background-img-->
             <div class="header__shadow"></div>
         </div>
         <a href="#cards"> <!--połączone poprzez id z sekcją cards-->
             <div class="header__arrow">
+                <!-- dajemy samego img, tylko opakowujemy go w div, aby za pomocą tego div pozycjonować go-->
                 <img class="header__arrow-icon" src="./img/icons/arrow-down.svg" alt="">
                 <!--zwróć uwagę na umieszczeniu ikonki w tagu img, tego jeszcze nie robiliśmy; zwróć uwagę, że w tym przypadku alt zostawiamy pusty, bo niewidomej osobie takie informacje nie są potrzebne, czytnik ekranu nie odczyta img z pustym altem-->
             </div>
@@ -59,7 +61,7 @@
                 <div class="cards__box">
                     <!--czyli blok składa się z trzech kart, a każda karta składa się z :img z ikonką, h3 oraz p-->
                     <div class="cards__card cards__card--one">
-                        <img src="./img/icons/trending-up.svg" alt="">
+                        <img src="./img/icons/trending-up.svg" alt=""> <!--img bez klasy-->
                         <h3>profit</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem.</p>
                     </div>
@@ -77,8 +79,8 @@
                     </div>
         </section>
         <!--SEKCJA INFO-->
+        <!--budowanie kolejnej sekcji zaczynamy nietypowo, bo od wrappera- cała ta sekcja będzie się znajdować we wraperze, pomiędzy wraperem a krawędzią strony będzie wyświetlane tło nadane w body-->
         <div class="wrapper">
-            <!--budowanie kolejnej sekcji zaczynamy nietypowo, bo od wrappera- cała ta sekcja będzie się znajdować we wraperze-->
             <section class="info" id="invest">
                 <!--nazwa klasy w sekcji różni się od id sekcji; klasa info składa się z dwóch zasadniczych elementów: info__title oraz info__boxa plus 4 ikon umieszczonych w img-->
 
@@ -90,7 +92,7 @@
 
                     <!--info__box one-->
                     <div class="info__box">
-                        <!--info__box składa się z bloków: img, h2, oraz dwóch paragrafów a także "a", wszystkie dzieci bloku info__box także pełnią funkcję bloków-->
+                        <!--info__box składa się z bloków: img, h2, oraz dwóch paragrafów a także "a", wszystkie dzieci bloku info__box także pełnią funkcję bloków w klasyfikacji BEM-->
                         <img src="./img/invest_banknotes.jpg" alt="banknoty" class="info__box-img">
                         <h3 class="info__box-title">money</h3>
                         <p class="info__box-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores in
@@ -225,7 +227,31 @@
             <img src="./img/gallery/8.jpg" class="gallery__img" alt="two bitcoins">
         </section>
         <!--SECTION CONTACT-->
-        <section class="contact" id="contact"></section>
+        <section class="contact" id="contact">
+            <div class="wrapper">
+                <h2 class="section-title">contact <span>us</span>
+                </h2>
+                <form class="contact__form"> <!--skasowaliśmy pole "action"-->
+                    <div class="contact__form-box">
+                        <label for="name">Your name:</label>
+                        <input type="text"
+                            id="name"><!--musisz koniecznie wprowadzić do inputa "id" bo go wczesniej nie było, żeby powiązać go z  polem"for: name"-->
+                    </div>
+                    <div class="contact__form-box">
+                        <label for="email">Your email:</label>
+                        <input type="email" id="email">
+                        <!--typ inputa" email; typy inputów: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input-->
+                    </div>
+                    <div class="contact__form-box">
+                        <label for="msg">Your message:</label><!--wprowadzamy for "msg" od słowa :message-->
+                        <textarea id="msg" cols="30" rows="10"></textarea>
+                        <!--zamiast inputa wprowadzamy textarea, łączymy ją za pomocą id z "labelem"; z textarea usuwamy "name"-->
+                    </div>
+                    <button type="submit" class="contact__form-btn">Sumbit</button>
+                    <!--dodajemy typ:submit bo są jeszcze typy: reset oraz button; dodajemy też klasę "contact__form-btn"-->
+                </form>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <p class="footer__bottom-text">&copy; <span class="footer__year"></span>DG&M Corporation</p>

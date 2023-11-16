@@ -22,14 +22,13 @@
 		&__bg-icon {
 			display: block;
 			position: absolute;
-			grid-area: title;
+			grid-area: title; /*pozycjonowanie dzięki gridowi jeśli chodzi o obszar*/
 			opacity: 0.05;
 			z-index: -5;
 			// background-color: red;
 			&--one {
-				top: 14%; /*jest włączona position absolute parę wierszy wyzej*/
+				top: 14%; /*jest włączona position absolute na main*/
 				width: 20%; /*względem szerokości rodzica*/
-				transform: rotate(15deg); /*taki będzie punkt wyjściowy do obrotów*/
 				animation: rotate-right 155s infinite linear;
 				// background-color: aqua;
 			}
