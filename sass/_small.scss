@@ -28,7 +28,7 @@
 			// background-color: red;
 			&--one {
 				top: 14%; /*jest włączona position absolute na main*/
-				width: 20%; /*względem szerokości rodzica*/
+				width: 20%; /*względem szerokości obszaru title, który ma padding boczny 1em*/
 				animation: rotate-right 155s infinite linear;
 				// background-color: aqua;
 			}

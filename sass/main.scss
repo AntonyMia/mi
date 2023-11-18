@@ -311,7 +311,7 @@ h1.company-name {
 }
 //plans
 .plans {
-	padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji*/
+	padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji, uwaga ta sekcja na urządzenie maobilne nie jest ułożona za pomocą grid, po prostu wykorzystuje, że div.plans__box ukladają się jeden pod drugim jako elementy blokowe*/
 	background-color: $darker;
 	&__box {
 		margin: 1em 0;
@@ -360,6 +360,7 @@ h1.company-name {
 		border: 1px solid transparent;
 	}
 	&__button {
+		margin-top: 1em;
 		padding: 2em;
 		border: 1px solid $gold;
 		border-radius: 8px;
@@ -379,8 +380,8 @@ h1.company-name {
 	grid-template-columns: repeat(2, 1fr);
 	&__img {
 		height: 300px;
-		width: 100%;
-		object-fit: cover; /*obraz zostanie wypełniony, a nie zdeformowany, a nadmiarowa zawartość zostanie obcięta.*/
+		width: 100%; /*odnosimy się do szerokości frakcji*/
+		object-fit: cover; /*obraz zostanie wypełniony, a nie zdeformowany, a nadmiarowa zawartość zostanie obcięta, widać to w notatkach na str 425 */
 		// background-color: red;
 		&:nth-child(odd) {
 			display: none;
@@ -437,6 +438,7 @@ h1.company-name {
 			}
 		}
 		&:nth-child(1) {
+			/*zamiast dawać każdemu z boxów oddzielną klasę efekt osiągamy przez &:nth-child(..)*/
 			grid-column: 1/-1;
 			grid-row: 1/2;
 		}

@@ -23,6 +23,7 @@
 		.plans {
 			padding: 8em 2em;
 			&__box {
+				/*karty &__box są dalej ustawiane w tym samym miejscu, czyli za ich ustawienie odpowiada fakt, że div.plans__box jest elementem blokowym, natomiast inaczej rozmieszczamy ich treść*/
 				display: grid;
 				grid-template-columns: repeat(
 					5,
@@ -54,6 +55,7 @@
 			&__form {
 				display: grid;
 				grid-template-columns: 3fr 1fr; /*to automatycznie układa dwójkę dzieci czyli newsletter__input oraz newsletter__button w dwóch kolumnach, w stosunku szerokości 3:1*/
+				align-items: center;
 				gap: 20px;
 			}
 			&__button {
@@ -66,10 +68,8 @@
 		.gallery {
 			grid-template-columns: repeat(4, 1fr);
 			&__img {
-				&:nth-child(odd) {
 					display: block;
 				}
-			}
 		}
 		.contact {
 			&__form {

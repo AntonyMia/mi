@@ -298,7 +298,7 @@ h1.company-name {
 }
 
 .plans {
-  padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji*/
+  padding: 6em 2em; /*tak wpływamy w dużym stopniu na wymiar sekcji, uwaga ta sekcja na urządzenie maobilne nie jest ułożona za pomocą grid, po prostu wykorzystuje, że div.plans__box ukladają się jeden pod drugim jako elementy blokowe*/
   background-color: #191919;
 }
 .plans__box {
@@ -347,6 +347,7 @@ h1.company-name {
   border: 1px solid transparent;
 }
 .newsletter__button {
+  margin-top: 1em;
   padding: 2em;
   border: 1px solid #d6c78e;
   border-radius: 8px;
@@ -366,9 +367,9 @@ h1.company-name {
 }
 .gallery__img {
   height: 300px;
-  width: 100%;
+  width: 100%; /*odnosimy się do szerokości frakcji*/
   -o-object-fit: cover;
-     object-fit: cover; /*obraz zostanie wypełniony, a nie zdeformowany, a nadmiarowa zawartość zostanie obcięta.*/
+     object-fit: cover; /*obraz zostanie wypełniony, a nie zdeformowany, a nadmiarowa zawartość zostanie obcięta, widać to w notatkach na str 425 */
 }
 .gallery__img:nth-child(odd) {
   display: none;
@@ -422,6 +423,7 @@ h1.company-name {
   border: 1px solid #d6c78e; /*żeby był ładny efekt podświetlenia*/
 }
 .contact__form-box:nth-child(1) {
+  /*zamiast dawać każdemu z boxów oddzielną klasę efekt osiągamy przez &:nth-child(..)*/
   grid-column: 1/-1;
   grid-row: 1/2;
 }
@@ -464,7 +466,7 @@ h1.company-name {
   }
   .info__bg-icon--one {
     top: 14%; /*jest włączona position absolute na main*/
-    width: 20%; /*względem szerokości rodzica*/
+    width: 20%; /*względem szerokości obszaru title, który ma padding boczny 1em*/
     animation: rotate-right 155s infinite linear;
   }
   .info__bg-icon--two {
@@ -509,6 +511,7 @@ h1.company-name {
     padding: 8em 2em;
   }
   .main .plans__box {
+    /*karty &__box są dalej ustawiane w tym samym miejscu, czyli za ich ustawienie odpowiada fakt, że div.plans__box jest elementem blokowym, natomiast inaczej rozmieszczamy ich treść*/
     display: grid;
     grid-template-columns: repeat(5, 1fr); /*podział na 5 kolumn wynika z faktu, że &__box ma 5 dzieci, a celem jest, by każde dziecko pojawiło się obok siebie*/
     align-items: center;
@@ -532,6 +535,7 @@ h1.company-name {
   .main .newsletter__form {
     display: grid;
     grid-template-columns: 3fr 1fr; /*to automatycznie układa dwójkę dzieci czyli newsletter__input oraz newsletter__button w dwóch kolumnach, w stosunku szerokości 3:1*/
+    align-items: center;
     gap: 20px;
   }
   .main .newsletter__button {
@@ -543,7 +547,7 @@ h1.company-name {
   .main .gallery {
     grid-template-columns: repeat(4, 1fr);
   }
-  .main .gallery__img:nth-child(odd) {
+  .main .gallery__img {
     display: block;
   }
   .main .contact__form {
