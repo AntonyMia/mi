@@ -4,7 +4,21 @@
 	padding: 0;
 }
 body {
-	background-color: rgb(136, 136, 97)
+	background-color: rgb(136, 136, 97);
+	hr {
+		color: green;
+	}
+	p.maker {
+		background-color: #fff;
+	}
+	.test p {
+		background-color: green;
+	}
+	button {
+		margin-left: 100px;
+		width: 100px;
+		height: 20px;
+	}
 }
 .animals {
 	.maroon:nth-last-child(1) {

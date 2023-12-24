@@ -7,6 +7,20 @@
 body {
   background-color: rgb(136, 136, 97);
 }
+body hr {
+  color: green;
+}
+body p.maker {
+  background-color: #fff;
+}
+body .test p {
+  background-color: green;
+}
+body button {
+  margin-left: 100px;
+  width: 100px;
+  height: 20px;
+}
 
 .animals .maroon:nth-last-child(1) {
   background-color: red;
