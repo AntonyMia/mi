@@ -5,23 +5,42 @@
 }
 body {
 	background-color: rgb(136, 136, 97);
-	hr {
-		color: green;
-	}
-	p.maker {
-		background-color: #fff;
-	}
-	.test p {
-		background-color: green;
-	}
-	button {
-		margin-left: 100px;
-		width: 100px;
-		height: 20px;
-	}
-}
-.animals {
-	.maroon:nth-last-child(1) {
+	.red {
+		width: 50vw;
+		height: 50wh;
+		border-radius: 20%;
 		background-color: red;
+	}
+	.orange {
+		width: 30vw;
+		height: 30vh;
+		background-color: orange;
+		border-radius: 20%;
+	}
+
+	.lime {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background-color: lime;
+		pointer-events: none;
+	}
+	.blue {
+		position: absolute;
+		top: 62px;
+		left: 25px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: royalblue;
+	}
+	.gold {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: gold;
 	}
 }

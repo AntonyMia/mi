@@ -1,18 +1,30 @@
-const test1 = document.querySelector('div.yellow');
-console.log(test1);
-console.log(test1.innerText);
-test1.innerText = '<div> antisocial</div>';
-console.log(test1.innerText);
-test2 = document.querySelector('p.inner-text');
-console.log(test2);
-test3 = document.querySelector('p.text-content');
-console.log(test3);
-console.log(test2.innerText);
-console.log(test3.textContent);
-test4 = document.querySelector('p.young');
-console.log(test4);
-console.log(test4.textContent);
-test4.textContent = ' - Taka była wola większości na walnym zgromadzeniu. Część wędkarzy od dłuższego czasu .';
-console.log(test4.textContent);
-const input = document.querySelector('input');
-const underInput = document.querySelector('.under-input')
+const lime = document.querySelector('.lime');
+const blue = document.querySelector('.blue');
+const gold = document.querySelector('.gold');
+const orange = document.querySelector('.orange');
+const red = document.querySelector('.red');
+const infoRed = () => {
+	console.log('%ckod, który jest supernadrzędny', 'color: red; text-transform: uppercase');
+};
+const infoOrange = () => {
+	// e.stopPropagation();
+	console.log('%ckod, który jest nadrzędny', 'color: orange; text-transform: uppercase');
+};
+const infoLime = () => {
+	// e.stopPropagation();
+	console.log('%ckod, którego nie chcemy wykonać nr2', 'color: lime; text-transform: uppercase');
+};
+
+const infoBlue = () => {
+	// e.stopPropagation();
+	console.log('%ckod, którego nie chcemy wykonać nr1', 'color: royalblue; text-transform: uppercase');
+};
+const infoGold = () => {
+	// e.stopPropagation();
+	console.log('%c chcemy wykonać ten kod', 'color: gold; text-transform: uppercase');
+};
+red.addEventListener('click', infoRed);
+orange.addEventListener('click', infoOrange);
+lime.addEventListener('click', infoLime);
+blue.addEventListener('click', infoBlue);
+gold.addEventListener('click', infoGold);
