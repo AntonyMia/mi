@@ -1,11 +1,24 @@
-const test = () => {
-	console.log(`dupa`);
-};
-setTimeout(test, 5000);
-const test2 = () => {
-	for (let i = 0; i < 5; i++) {
-		console.log(`Liczba do przepracowania to wciąż ${i} dni`);
-	}
-};
-test2();
-setTimeout(test2, 1000);
+const a = document.querySelector('a');
+const img = document.querySelector('img');
+const p = document.querySelector('p');
+a.setAttribute('href', '#');
+a.setAttribute('target', '_blank');
+console.log(img.getAttribute('src'));
+console.log(img.getAttribute('alt'));
+
+console.log(img.hasAttribute('alt'));
+console.log(p.hasAttribute('alt'));
+console.log(img.hasAttribute('title'));
+console.log(a.hasAttribute('href'));
+console.log(a.getAttribute('href'));
+p.removeAttribute('style');
+p.setAttribute('style', 'background-color:red');
+p.setAttribute('style', 'border-radius: 20px');
+p.removeAttribute('class');
+const div = document.querySelector('[data-day="Monday"]');
+console.log(div);
+const p1 = document.querySelector('[data-avoid="food"]');
+console.log(p1.dataset.time);
+const div2 = document.querySelector('.po');
+console.log(div2);
+console.log(div2.dataset.specificInfo);

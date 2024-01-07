@@ -16,43 +16,14 @@ body {
   font-size: 36px;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+p {
+  background-color: blue;
 }
 
-.p1,
-.p2 {
-  display: none;
+.abc {
+  color: green;
 }
 
-.show {
-  display: block;
-}
-
-.square {
-  margin: 20px;
-  width: 300px;
-  height: 300px;
-  background-color: gold;
-}
-
-button {
-  padding: 20px 40px;
-  margin: 20px;
-  cursor: pointer;
-  background: none;
-  color: #fff;
-  font-size: 18px;
-  border: 3px solid #ddd;
-  border-radius: 8px;
-  transition: 0.3s;
-  text-transform: uppercase;
-}
-
-button:hover {
-  background-color: #ddd;
-  color: #000;
+[href] {
+  color: gold;
 }/*# sourceMappingURL=main.css.map */
